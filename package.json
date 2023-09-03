@@ -1,5 +1,15 @@
 {
   "name": "johnbakhmat.dev",
+  "authors": [
+    {
+      "name": "nexxel",
+      "url": "https://nexxel.dev"
+    },
+    {
+      "name": "johnbakhmat",
+      "url": "https://johnbakhmat-dev.vercel.app/"
+    }
+  ],
   "type": "module",
   "version": "0.0.1",
   "scripts": {
