@@ -1,9 +1,9 @@
 ---
-layout: "../../layouts/BlogPost.astro"
 title: "I wrote Pong in Rust and why you should too"
 description: "I researched the availability of Rust libraries for game development and wrote Pong in Rust. Here's why you should too."
 pubDate: "August 27, 2023"
 readingTime: '123'
+draft: true
 ---
 
 ## How did I get here?

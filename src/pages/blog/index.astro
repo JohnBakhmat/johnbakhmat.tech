@@ -5,20 +5,10 @@ import Footer from "../../components/Footer.astro";
 import { BlogView } from "../../components/BlogView";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
-import getReadingtime from "reading-time";
-import type { CollectionEntry } from "astro:content";
-
-
-type Post = CollectionEntry<'blog'>
-const addReadTimes = (p:Post):Post => ({
-  ...p,
-  data: {
-    ...p.data,
-    readingTime: getReadingtime(p.body).text,
-  },
-})
-
-const posts = (await getCollection("blog", (p) => !p.data.draft)).map(addReadTimes);
+import { addReadTimes } from "../../utils/read-time";
+const posts = (await getCollection("blog", (p) => !p.data.draft)).map(
+  addReadTimes,
+);
 ---
 
 <!doctype html>
