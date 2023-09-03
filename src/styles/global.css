@@ -1,154 +1,137 @@
-/*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
- */
-
-:root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
-	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
-	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
-	--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
-		0 16px 32px rgba(var(--gray), 33%);
-}
 @font-face {
-	font-family: 'Atkinson';
-	src: url('/fonts/atkinson-regular.woff') format('woff');
+	font-family: "Satoshi-Variable";
+	src: url("/fonts/Satoshi-Variable.woff2") format("woff2");
+	font-weight: 300 900;
+	font-display: swap;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Satoshi-Variable Fallback";
+	src: local("Arial");
+	font-weight: 300 900;
+	font-style: normal;
+	ascent-override: 92.36%;
+	descent-override: 21.95%;
+	line-gap-override: 9.14%;
+	size-adjust: 109.35%;
+}
+
+@font-face {
+	font-family: "Martian Mono";
+	src: url("/fonts/MartianMono-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Hack";
+	src: url("/fonts/hack-regular-subset.woff2") format("woff2");
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
-@font-face {
-	font-family: 'Atkinson';
-	src: url('/fonts/atkinson-bold.woff') format('woff');
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
-}
-body {
-	font-family: 'Atkinson', sans-serif;
-	margin: 0;
-	padding: 0;
-	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 600px;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
-	font-size: 20px;
-	line-height: 1.7;
-}
-main {
-	width: 720px;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 1em;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
-	line-height: 1.2;
-}
-h1 {
-	font-size: 3.052em;
-}
-h2 {
-	font-size: 2.441em;
-}
-h3 {
-	font-size: 1.953em;
-}
-h4 {
-	font-size: 1.563em;
-}
-h5 {
-	font-size: 1.25em;
-}
-strong,
-b {
-	font-weight: 700;
-}
-a {
-	color: var(--accent);
-}
-a:hover {
-	color: var(--accent);
-}
-p {
-	margin-bottom: 1em;
-}
-.prose p {
-	margin-bottom: 2em;
-}
-textarea {
-	width: 100%;
-	font-size: 16px;
-}
-input {
-	font-size: 16px;
-}
-table {
-	width: 100%;
-}
-img {
-	max-width: 100%;
-	height: auto;
-	border-radius: 8px;
-}
-code {
-	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
-	border-radius: 2px;
-}
-pre {
-	padding: 1.5em;
-	border-radius: 8px;
-}
-pre > code {
-	all: unset;
-}
-blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
-	margin: 0px;
-	font-size: 1.333em;
-}
-hr {
-	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
-}
-@media (max-width: 720px) {
-	body {
-		font-size: 18px;
-	}
-	main {
-		padding: 1em;
-	}
+
+html {
+	color-scheme: dark;
+	margin-left: calc(100vw - 100%);
+	margin-right: 0;
 }
 
-.sr-only {
-	border: 0;
-	padding: 0;
-	margin: 0;
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-	clip: rect(1px 1px 1px 1px);
-	/* maybe deprecated but we need to support legacy browsers */
-	clip: rect(1px, 1px, 1px, 1px);
-	/* modern browsers, clip-path works inwards from each corner */
-	clip-path: inset(50%);
-	/* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
-	white-space: nowrap;
+body {
+	--at-apply: "font-sans p-5 m-auto max-w-80ch text-(left neutral-300) bg-neutral-900 break-words leading-6 antialiased";
+	/* margin: auto !important; */
+	text-rendering: optimizeLegibility;
+	scroll-behavior: smooth;
+	word-wrap: break-word;
+	width: 100%;
+	font-family: "Satoshi-Variable", "Satoshi-Variable Fallback", system-ui,
+		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+		Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+h1 {
+	--at-apply: "font-black text-(4xl neutral-100)";
+}
+
+h2 {
+	--at-apply: "font-extrabold text-(2xl neutral-100)";
+}
+
+h3 {
+	--at-apply: "font-bold text-(xl neutral-100)";
+}
+
+.faq h3 {
+	--at-apply: "pb-1";
+}
+
+p {
+	--at-apply: "text-(neutral-300 lg)";
+}
+
+b {
+	--at-apply: "font-medium text-neutral-100";
+}
+
+a {
+	--at-apply: "text-themeText hover:underline underline-offset-2";
+}
+
+article {
+	--at-apply: "text-justify";
+}
+
+article a {
+	--at-apply: "text-neutral-100 font-medium underline underline-offset-2";
+}
+
+textarea {
+	--at-apply: "w-full text-16px";
+}
+
+input {
+	--at-apply: "text-16px";
+}
+
+content {
+	line-height: 1.6;
+}
+
+img {
+	--at-apply: "max-w-full h-auto my-8 rounded-xl border border-neutral-800";
+}
+
+code {
+	--at-apply: "font-martian text-(sm neutral-100) bg-themeBlack p-2.5px rounded border border-neutral-800";
+}
+
+pre {
+	--at-apply: "font-martian rounded-xl border border-neutral-800 p-4 my-8 text-sm scrollbar scrollbar-w-8px scrollbar-h-8px scrollbar-thumb-color-neutral-700 scrollbar-track-color-neutral-600 scrollbar-rounded  overflow-y-auto";
+}
+
+pre>code {
+	--at-apply: "font-martian";
+	all: unset;
+}
+
+blockquote {
+	--at-apply: "rounded-xl bg-themeBlack border border-neutral-700 p-4";
+}
+
+ul,
+ol {
+	--at-apply: "ml-8";
+}
+
+ul>li {
+	--at-apply: "list-disc text-lg pb-2";
+}
+
+ul>li::marker {
+	--at-apply: "text-neutral-500";
+}
+
+ol>li {
+	--at-apply: "list-decimal text-lg pb-2";
 }
