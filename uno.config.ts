@@ -18,7 +18,7 @@ export default defineConfig({
 			themeText: "#E69C51",
 			vitesseGreen: "#4d9375",
 			themeBlack: "#121212",
-			themeAccent: "#BD7EE1",
+			themeAccent: "#E69C51",
 		},
 	},
 });
