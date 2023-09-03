@@ -9,13 +9,16 @@
 			"recommended": true
 		}
 	},
-	"formatter":{
+	"formatter": {
 		"enabled": true,
 		"indentStyle": "tab",
 		"lineWidth": 80
 	},
-	"files":{
-		"ignore":["node_modules/**/*","**/*.xml.js"],
+	"files": {
+		"ignore": [
+			"node_modules/**/*",
+			"**/*.xml.js"
+		],
 		"ignoreUnknown": true
 	}
 }
