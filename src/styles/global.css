@@ -75,7 +75,7 @@ b {
 }
 
 a {
-	--at-apply: "text-themeText hover:underline underline-offset-2";
+	--at-apply: "text-themeAccent hover:underline underline-offset-2";
 }
 
 article {
