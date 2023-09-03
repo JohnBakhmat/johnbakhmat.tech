@@ -6,7 +6,9 @@ import { BlogView } from "../../components/BlogView";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import { addReadTimes } from "../../utils/read-time";
-const posts = (await getCollection("blog", (p) => !p.data.draft)).map(
+const posts = (await getCollection("blog", ({data}) => {
+  return import.meta.env.PROD ? data.draft !== true : true;
+})).map(
   addReadTimes,
 );
 ---

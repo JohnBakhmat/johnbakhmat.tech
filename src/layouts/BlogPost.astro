@@ -6,7 +6,7 @@ import Footer from "../components/Footer.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, readingTime } = Astro.props;
+const { title, description, pubDate, readingTime, draft } = Astro.props;
 ---
 
 <html lang="en">
@@ -58,6 +58,7 @@ const { title, description, pubDate, readingTime } = Astro.props;
             <span class="text-base">{readingTime}</span>
           </div>
         </div>
+        {draft && <h1>[Draft]</h1>}
         <hr class="border-(t t-neutral-700) my-8" />
         <slot />
       </article>
