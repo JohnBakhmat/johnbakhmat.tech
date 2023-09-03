@@ -1,6 +1,6 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
-// import { EmailSelect } from "./EmailSelect";
+import { EmailSelect } from "./EmailSelect";
 ---
 
 <header class="m-[0_0_2em]">
@@ -21,7 +21,7 @@ import HeaderLink from "./HeaderLink.astro";
     <HeaderLink href="https://github.com/johnbakhmat" target="_blank"
       >GitHub</HeaderLink
     >
-    <!-- <EmailSelect client:visible /> -->
+    <EmailSelect client:visible />
   </nav>
 </header>
 <style>
