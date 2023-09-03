@@ -135,3 +135,11 @@ ul>li::marker {
 ol>li {
 	--at-apply: "list-decimal text-lg pb-2";
 }
+
+.text-john{
+	color: transparent;
+	background: linear-gradient(322deg, #ff1b6b, #45caff);
+	background-clip: text;
+	-webkit-background-clip: text;
+
+}
