@@ -1,0 +1,6 @@
+# be nice robot!!
+
+User-agent: *
+Disallow:
+
+Sitemap: https://www.johnbakhmat-dev.vercel.app/sitemap-index.xml

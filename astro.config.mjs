@@ -8,7 +8,7 @@ import { loadTheme } from "shiki-themes";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://example.com",
+	site: "https://johnbakhmat-dev.vercel.app",
 	integrations: [unocss(), mdx(), sitemap(), react()],
 	markdown: {
 		extendDefaultPlugins: true,
