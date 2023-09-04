@@ -1,0 +1,109 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="overflow-x-hidden">
+    <Header title={SITE_TITLE} />
+    <main>
+      <h1 class="pb-6">Uses</h1>
+
+      <h2 class="pb-2">This Website</h2>
+      <ul>
+        <li><a href="https://astro.build/" target="_blank">Astro</a></li>
+        <li>React</li>
+        <li>Typescript</li>
+        <li>Tailwind CSS</li>
+        <li>Uno CSS</li>
+        <li>fuse.js</li>
+        <li>shiki</li>
+        <li>Headless UI</li>
+        <li>
+          Code theme - <a
+            href="https://github.com/raunofreiberg/vesper"
+            target="_blank">Vesper</a
+          >
+        </li>
+      </ul>
+      <h2 class="pb-2">Fonts</h2>
+      <ul>
+        <li>
+          <a
+            href="https://evilmartians.com/products/martian-mono"
+            target="_blank"
+          >
+            Martian Mono
+          </a>
+        </li>
+        <li>
+          <a href="https://www.jetbrains.com/lp/mono/" target="_blank">
+            JetBrains Mono
+          </a>
+        </li>
+        <li>
+          <a href="https://philpl.gumroad.com/l/dank-mono" target="_blank">
+            Dank Mono
+          </a>
+        </li>
+        <li>
+          <a href="https://sourcefoundry.org/hack/" target="_blank"> Hack</a>
+        </li>
+      </ul>
+
+      <h2 class="pb-2">Editor + Terminal</h2>
+      <ul>
+        <li>
+          <a href="https://code.visualstudio.com/" target="_blank">
+            Visual Studio Code
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/michael-andreuzza/cocoabutter"
+            target="_blank"
+          >
+            Cocoa Butter Theme
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/alacritty/alacritty" target="_blank">
+            Alacritty
+          </a>
+        </li>
+        <li>
+          <a href="https://starship.rs/" target="_blank">Starship</a>
+        </li>
+        <li>
+          <a href="https://fishshell.com/" target="_blank">Fish</a>
+        </li>
+      </ul>
+    </main>
+
+    <h2 class="pb-2">Hardware</h2>
+    <ul>
+      <li>MacBook Pro (13-inch, 2019, M1)</li>
+      <li>AirPods Pro 2</li>
+      <hr />
+      <li>Keyboard - Keychrone K1 SE (Brown switches)</li>
+      <li>Mouse - A4Tech Bloody V7</li>
+      <li>Primary Monitor - Philips 242E1GZ (1920x1080, 144Hz)</li>
+      <li>Secondary Monitor - Samsung P2250 (1920x1080, 60Hz)</li>
+      <hr />
+      <li>CPU - HexaCore AMD Ryzen 5 3600X, 4200 MHz</li>
+      <li>GPU - MSI GeForce GTX 1070 Gaming X (8gb)</li>
+      <li>Motherboard - Gigabyte B450 Aorus Elite</li>
+      <li>RAM - 16gb (2x8gb) Corsair Vengeance</li>
+      <li>Windows 11</li>
+      <li>WSL Debian 12</li>
+    </ul>
+
+    <Footer />
+  </body>
+</html>
