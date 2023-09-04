@@ -28,7 +28,8 @@ const pinnedRepos = await fetch(
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body>
+  <body class="overflow-x-hidden">
+    <div class="grain"></div>
     <Header title={SITE_TITLE} />
     <main class="text-lg text-neutral-200">
       <h1 class="text-4xl pb-2">Hi, I'm <span class="text-john">John</span></h1>
