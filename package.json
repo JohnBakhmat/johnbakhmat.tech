@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^1.0.0",
+    "@astrojs/prefetch": "^0.4.0",
     "@astrojs/react": "^3.0.0",
     "@astrojs/rss": "^3.0.0",
     "@astrojs/sitemap": "^3.0.0",
