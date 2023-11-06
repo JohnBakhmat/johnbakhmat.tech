@@ -11,15 +11,32 @@ type PinnedRepo = {
   repo: string;
   description: string;
   language: string;
-  languageColor: string;
   stars: number;
-  forks: string;
+};
+
+type Response = {
+  pinnedItems: {
+    name: string;
+    description: string;
+    url: string;
+    stargazerCount: number;
+    forkCount: number;
+    languages: {
+      [key: string]: string;
+    };
+  }[];
 };
 
 const pinnedRepos = await fetch(
-  "https://gh-pinned.nxl.sh/api/user/johnbakhmat",
+  "https://pinned.rubkn.dev/api/user/johnbakhmat",
 ).then(async (response) => {
-  return (await response.json()) as PinnedRepo[];
+  return ((await response.json()) as Response).pinnedItems.map((i) => ({
+    owner: "johnbakhmat",
+    repo: i.name,
+    description: i.description,
+    stars: i.stargazerCount,
+    language: Object.keys(i.languages).join(", ")
+  }));
 });
 ---
 
