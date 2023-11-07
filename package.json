@@ -26,6 +26,7 @@
     "@astrojs/react": "^3.0.0",
     "@astrojs/rss": "^3.0.0",
     "@astrojs/sitemap": "^3.0.0",
+    "@astrojs/vercel": "^5.1.0",
     "@headlessui/react": "^1.7.17",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
