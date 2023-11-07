@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Project from "../components/Project.astro";
 import { Age } from "../components/Age";
+import SpotifyWidget from "../components/SpotifyWidget.tsx";
 
 type PinnedRepo = {
   owner: string;
@@ -88,6 +89,9 @@ const pinnedRepos = await fetch(
           })
         }
       </section>
+      <br/>
+      <SpotifyWidget client:only/>
+
     </main>
     <Footer />
   </body>
