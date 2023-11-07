@@ -29,6 +29,7 @@
     "@headlessui/react": "^1.7.17",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
+    "@vercel/analytics": "^1.1.1",
     "astro": "^3.0.7",
     "fuse.js": "^6.6.2",
     "react": "^18.0.0",
