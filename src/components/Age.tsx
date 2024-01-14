@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 function getAge() {
 	return (
-		(new Date().getTime() - new Date(2002, 1, 9).getTime()) /
+		(new Date().getTime() - new Date(2002, 0, 9).getTime()) /
 		(1000 * 60 * 60 * 24 * 365.25)
 	)
 		.toString()
