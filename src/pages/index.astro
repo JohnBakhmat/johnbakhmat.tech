@@ -37,7 +37,7 @@ const pinnedRepos = await fetch(
     stars: i.stargazerCount,
     language: Object.keys(i.languages).join(", ")
   }));
-});
+}).catch((_error)=> []);
 ---
 
 <!doctype html>
@@ -72,9 +72,9 @@ const pinnedRepos = await fetch(
       <br />
       <h2 class="text-3xl pb-4">Things I've built or contributed to</h2>
       <section
-        class="grid grid-cols-1 gap-4 auto-cols-max sm:grid-cols-2 sm:gap-3"
+        class="grid grid-cols-1 gap-4 auto-cols-max sm:grid-cols-2 sm:gap-3 place-items-center"
       >
-        {
+        {pinnedRepos.length > 0 ?
           pinnedRepos.map((repo) => {
             return (
               <Project
@@ -86,6 +86,13 @@ const pinnedRepos = await fetch(
               />
             );
           })
+          :
+          <div class="col-span-full row-span-full flex flex-col place-content-center text-center">
+          <p>
+          OOps can't get project info! If you see this, <a href="mailto:johnbakhmat@gmail.com/?subject=Yo, your site project api broke">contact me</a> ASAP!
+          </p>
+          <h1>☹</h1>
+          </div>
         }
       </section>
     </main>
