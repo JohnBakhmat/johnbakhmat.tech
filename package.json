@@ -1,49 +1,49 @@
 {
-  "name": "johnbakhmat.dev",
-  "authors": [
-    {
-      "name": "nexxel",
-      "url": "https://nexxel.dev"
-    },
-    {
-      "name": "johnbakhmat",
-      "url": "https://johnbakhmat-dev.vercel.app/"
-    }
-  ],
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "format": "biome format ./src "
-  },
-  "dependencies": {
-    "@astrojs/mdx": "^1.0.0",
-    "@astrojs/prefetch": "^0.4.0",
-    "@astrojs/react": "^3.0.0",
-    "@astrojs/rss": "^3.0.0",
-    "@astrojs/sitemap": "^3.0.0",
-    "@astrojs/vercel": "^5.1.0",
-    "@headlessui/react": "^1.7.17",
-    "@types/react": "^18.0.21",
-    "@types/react-dom": "^18.0.6",
-    "@vercel/analytics": "^1.1.1",
-    "astro": "^3.0.7",
-    "fuse.js": "^6.6.2",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "reading-time": "^1.5.0",
-    "rehype-autolink-headings": "^6.1.1",
-    "shiki": "^0.14.4",
-    "shiki-themes": "^0.2.7"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.0.0",
-    "@unocss/reset": "^0.55.6",
-    "unocss": "^0.55.6",
-    "unocss-preset-scrollbar": "^0.2.1"
-  }
+	"name": "johnbakhmat.dev",
+	"authors": [
+		{
+			"name": "nexxel",
+			"url": "https://nexxel.dev"
+		},
+		{
+			"name": "johnbakhmat",
+			"url": "https://johnbakhmat-dev.vercel.app/"
+		}
+	],
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"format": "biome format ./src "
+	},
+	"dependencies": {
+		"@astrojs/mdx": "^1.0.0",
+		"@astrojs/node": "^6.1.0",
+		"@astrojs/prefetch": "^0.4.0",
+		"@astrojs/react": "^3.0.0",
+		"@astrojs/rss": "^3.0.0",
+		"@astrojs/sitemap": "^3.0.0",
+		"@headlessui/react": "^1.7.17",
+		"@types/react": "^18.0.21",
+		"@types/react-dom": "^18.0.6",
+		"@vercel/analytics": "^1.1.1",
+		"astro": "^3.0.7",
+		"fuse.js": "^6.6.2",
+		"react": "^18.0.0",
+		"react-dom": "^18.0.0",
+		"reading-time": "^1.5.0",
+		"rehype-autolink-headings": "^6.1.1",
+		"shiki": "^0.14.4",
+		"shiki-themes": "^0.2.7"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.0.0",
+		"@unocss/reset": "^0.55.6",
+		"unocss": "^0.55.6",
+		"unocss-preset-scrollbar": "^0.2.1"
+	}
 }
