@@ -5,38 +5,28 @@ import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Project from "../components/Project.astro";
 import { Age } from "../components/Age";
-
-type PinnedRepo = {
-  owner: string;
-  repo: string;
-  description: string;
-  language: string;
-  stars: number;
-};
+import {type Repo} from './repo.ts'
 
 type Response = {
-  pinnedItems: {
-    name: string;
-    description: string;
-    url: string;
-    stargazerCount: number;
-    forkCount: number;
-    languages: {
-      [key: string]: string;
-    };
-  }[];
-};
+    Name:string,
+    Description: string,
+    Url: string,
+    Stars: number,
+    Forks: number,
+    Languages: string[]
+}[]
 
 const pinnedRepos = await fetch(
-  "https://pinned.rubkn.dev/api/user/johnbakhmat",
+  "https://pinned.fly.dev/projects/johnbakhmat",
 ).then(async (response) => {
-  return ((await response.json()) as Response).pinnedItems.map((i) => ({
-    owner: "johnbakhmat",
-    repo: i.name,
-    description: i.description,
-    stars: i.stargazerCount,
-    language: Object.keys(i.languages).join(", ")
-  }));
+  return ((await response.json()) as Response).map((i) => ({
+    name: i.Name,
+    description: i.Description,
+    url:i.Url,
+    stars: i.Stars,
+    forks: i.Forks,
+    languages: i.Languages
+  }as Repo));
 }).catch((_error)=> []);
 ---
 
@@ -78,21 +68,18 @@ const pinnedRepos = await fetch(
           pinnedRepos.map((repo) => {
             return (
               <Project
-                name={repo.repo}
-                owner={repo.owner}
-                description={repo.description}
-                stars={repo.stars}
-                language={repo.language}
-              />
-            );
-          })
-          :
-          <div class="col-span-full row-span-full flex flex-col place-content-center text-center">
-          <p>
-          OOps can't get project info! If you see this, <a href="mailto:johnbakhmat@gmail.com/?subject=Yo, your site project api broke">contact me</a> ASAP!
-          </p>
-          <h1>☹</h1>
-          </div>
+                repo={repo}
+                />
+                );
+            })
+          :(
+                  <div class="col-span-full row-span-full flex flex-col place-content-center text-center">
+                  <p>
+                  OOps can't get project info! If you see this, <a href="mailto:johnbakhmat@gmail.com/?subject=Yo, your site project api broke">contact me</a> ASAP!
+                  </p>
+                  <h1>☹</h1>
+                  </div>
+           )
         }
       </section>
     </main>

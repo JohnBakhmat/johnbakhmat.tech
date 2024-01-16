@@ -1,26 +1,24 @@
 ---
+import { type Repo } from '../pages/repo';
 export interface Props {
-  name: string;
-  owner: string;
-  description: string;
-  stars: number;
-  language: string;
+    repo: Repo
 }
 
-const { name, owner, description, stars, language } = Astro.props;
+const { repo} = Astro.props;
+
 ---
 
 <a
-  href={`https://github.com/${owner}/${name}`}
+  href={repo.url}
   target="_blank"
-  class="hover:no-underline"
+  class="hover:no-underline w-full"
 >
   <div
     class="h-36 flex flex-col justify-between gap-y-2 border border-neutral-700 bg-themeBlack hover:scale-105 ease-out transition-transform p-4 rounded-xl"
   >
     <div class="flex flex-col gap-y-2">
-      <span class="text-(xl themeText) font-medium">{name}</span>
-      <p class="text-(sm neutral-200)">{description}</p>
+      <span class="text-(xl themeText) font-medium">{repo.name}</span>
+      <p class="text-(sm neutral-200)">{repo.description}</p>
     </div>
     <div class="flex items-center gap-x-2 text-(sm neutral-200)">
       <div class="flex gap-x-1 items-center">
@@ -40,12 +38,12 @@ const { name, owner, description, stars, language } = Astro.props;
             ></path>
           </svg>
         </span>
-        <span>{stars}</span>
+        <span>{repo.stars}</span>
       </div>
 
       <span>•</span>
 
-      <div class="text-sm">{language}</div>
+      <div class="text-sm">{repo.languages.join(", ")}</div>
     </div>
   </div>
 </a>
