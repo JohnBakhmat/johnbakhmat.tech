@@ -1,0 +1,93 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: {{ include "app.fullname" . }}
+  labels:
+    {{- include "app.labels" . | nindent 4 }}
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP
+      hosts:
+        - {{ .Values.service.host }}
+    {{- if .Values.service.ssl.enabled }}
+    - port:
+        number: 443
+        name: https
+        protocol: HTTPS
+      hosts:
+        - {{ .Values.service.host }}
+      tls:
+        mode: SIMPLE
+        credentialName: {{ include "app.fullname" . }}
+    {{- end }}
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: {{ include "app.fullname" . }}
+  labels:
+    {{- include "app.labels" . | nindent 4 }}
+spec:
+  hosts:
+    - {{ .Values.service.host }}
+  gateways:
+    - {{ include "app.fullname" . }}
+  # The order of the routes in this list matters, the catch-all (default) route goes last.
+  http:
+    - name: github-profile
+      match:
+        - uri:
+            exact: /github
+        - uri:
+            exact: /gh
+      redirect:
+        uri: /johnbakhmat
+        scheme: https
+        authority: github.com
+
+    - name: plausible
+      match:
+        - uri:
+            exact: /_internal/stats
+      headers:
+        request:
+          set:
+            Host: stats.devminer.xyz
+      rewrite:
+        uri: /api/event
+      route:
+        - destination:
+            host: stats.devminer.xyz
+            port:
+              number: 443
+
+    - name: primary-assets
+      match:
+        - uri:
+            regex: /.*\.(ttf|otf|woff|woff2)$
+      headers:
+        response:
+          set:
+            Cache-Control: public, max-age=31536000, immutable
+      route:
+        - weight: 100
+          destination:
+            host: {{ include "app.fullname" . }}
+            port:
+              number: {{ .Values.service.app_port }}
+        - weight: 0
+          destination:
+            host: {{ include "app.fullname" . }}-canary
+            port:
+              number: {{ .Values.service.app_port }}
+    - name: primary
+      route:
+        - destination:
+            host: {{ include "app.fullname" . }}
+            port:
+              number: {{ .Values.service.app_port }}

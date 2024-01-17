@@ -1,0 +1,23 @@
+# apiVersion: networking.istio.io/v1alpha3
+# kind: ServiceEntry
+# metadata:
+#   name: {{ include "app.fullname" . }}-github-com
+# spec:
+#   resolution: DNS
+#   location: MESH_EXTERNAL
+#   hosts:
+#     - "github.com"
+#   ports:
+#     - number: 443
+#       name: https
+#       protocol: TLS
+# ---
+# apiVersion: networking.istio.io/v1alpha3
+# kind: DestinationRule
+# metadata:
+#   name: {{ include "app.fullname" . }}-github-com
+# spec:
+#   host: github.com
+#   trafficPolicy:
+#     tls:
+#       mode: SIMPLE
