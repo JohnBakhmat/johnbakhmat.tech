@@ -1,0 +1,23 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: ServiceEntry
+metadata:
+  name: {{ include "app.fullname" . }}-stats-devminer-xyz
+spec:
+  resolution: DNS
+  location: MESH_EXTERNAL
+  hosts:
+    - "stats.devminer.xyz"
+  ports:
+    - number: 443
+      name: https
+      protocol: TLS
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: {{ include "app.fullname" . }}-stats-devminer-xyz
+spec:
+  host: stats.devminer.xyz
+  trafficPolicy:
+    tls:
+      mode: SIMPLE
