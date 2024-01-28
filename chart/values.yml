@@ -7,7 +7,7 @@ replicas: 3
 
 service:
   app_port: 80
-  host: john.devminer.xyz
+  host: johnbakhmat.tech
   ssl:
     enabled: true
     port: 443
