@@ -1,0 +1,8 @@
+.vercel
+dist
+node_modules
+.vscode
+.git
+.gitignore
+biome.json
+vercel.json
