@@ -14,6 +14,7 @@ spec:
         protocol: HTTP
       hosts:
         - {{ .Values.service.host }}
+        - www.{{ .Values.service.host }}
     {{- if .Values.service.ssl.enabled }}
     - port:
         number: 443
@@ -35,6 +36,7 @@ metadata:
 spec:
   hosts:
     - {{ .Values.service.host }}
+    - www.{{ .Values.service.host }}
   gateways:
     - {{ include "app.fullname" . }}
   # The order of the routes in this list matters, the catch-all (default) route goes last.
