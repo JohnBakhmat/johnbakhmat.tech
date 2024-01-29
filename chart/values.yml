@@ -1,5 +1,5 @@
 image:
-  repository: ghcr.io/thedevminertv/johnbakhmat-tech
+  repository: ghcr.io/johnbakhmat/johnbakhmat-tech
   pullPolicy: Always
   tag: "main"
 
