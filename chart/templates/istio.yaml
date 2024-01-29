@@ -22,6 +22,7 @@ spec:
         protocol: HTTPS
       hosts:
         - {{ .Values.service.host }}
+        - www.{{ .Values.service.host }}
       tls:
         mode: SIMPLE
         credentialName: {{ include "app.fullname" . }}
