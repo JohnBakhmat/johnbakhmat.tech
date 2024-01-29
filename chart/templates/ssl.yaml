@@ -21,6 +21,7 @@ spec:
     - client auth
   dnsNames:
     - {{ .Values.service.host }}
+    - www.{{ .Values.service.host }}
   issuerRef:
     name: {{ .Values.service.ssl.issuer.name }}
     kind: {{ .Values.service.ssl.issuer.kind }}
