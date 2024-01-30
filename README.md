@@ -22,4 +22,5 @@ pnpm dev
 ```
 
 ### Cloning / Forking
+
 This repo was forked from an old version of [nexxel's repo](https://github.com/nexxeln/nexxel.dev) and is licensed under his [Apache-2.0 license](https://github.com/nexxeln/nexxel.dev/blob/main/LICENSE). If you're copying this website, mentally thank him for his work and give him a star on his repo.

@@ -1,11 +1,7 @@
 import { type CollectionEntry } from "astro:content";
 type PostType = CollectionEntry<"blog">;
 
-export const Post = ({
-	data: post,
-}: {
-	data: PostType;
-}) => {
+export const Post = ({ data: post }: { data: PostType }) => {
 	return (
 		<a
 			href={`/blog/${post.slug}`}

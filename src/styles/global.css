@@ -1,156 +1,166 @@
 @font-face {
-	font-family: "Satoshi-Variable";
-	src: url("/fonts/Satoshi-Variable.woff2") format("woff2");
-	font-weight: 300 900;
-	font-display: swap;
-	font-style: normal;
-	font-display: swap;
+  font-family: "Satoshi-Variable";
+  src: url("/fonts/Satoshi-Variable.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-	font-family: "Satoshi-Variable Fallback";
-	src: local("Arial");
-	font-weight: 300 900;
-	font-style: normal;
-	ascent-override: 92.36%;
-	descent-override: 21.95%;
-	line-gap-override: 9.14%;
-	size-adjust: 109.35%;
-	font-display: swap;
+  font-family: "Satoshi-Variable Fallback";
+  src: local("Arial");
+  font-weight: 300 900;
+  font-style: normal;
+  ascent-override: 92.36%;
+  descent-override: 21.95%;
+  line-gap-override: 9.14%;
+  size-adjust: 109.35%;
+  font-display: swap;
 }
 
 @font-face {
-	font-family: "Martian Mono";
-	src: url("/fonts/MartianMono-Regular.woff2") format("woff2");
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
+  font-family: "Martian Mono";
+  src: url("/fonts/MartianMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-	font-family: "Hack";
-	src: url("/fonts/hack-regular-subset.woff2") format("woff2");
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
+  font-family: "Hack";
+  src: url("/fonts/hack-regular-subset.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 html {
-	color-scheme: dark;
-	margin-left: calc(100vw - 100%);
-	margin-right: 0;
+  color-scheme: dark;
+  margin-left: calc(100vw - 100%);
+  margin-right: 0;
 }
 
 body {
-	--at-apply: "font-sans p-5 m-auto max-w-80ch text-(left neutral-300) bg-neutral-900 break-words leading-6 antialiased";
-	text-rendering: optimizeLegibility;
-	scroll-behavior: smooth;
-	word-wrap: break-word;
-	width: 100%;
-	font-family: "Satoshi-Variable", "Satoshi-Variable Fallback", system-ui,
-		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
-		Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-	font-display: swap;
+  --at-apply: "font-sans p-5 m-auto max-w-80ch text-(left neutral-300) bg-neutral-900 break-words leading-6 antialiased";
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  word-wrap: break-word;
+  width: 100%;
+  font-family:
+    "Satoshi-Variable",
+    "Satoshi-Variable Fallback",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  font-display: swap;
 }
 
 .grain {
-	--at-apply: "z-40 pointer-events-none fixed overflow-hidden inset-0 -left-[200%] -r-[200%] w-[400%] h-full bg-[url('/images/framernoise.png')] bg-left-top bg-[length:250px] opacity-[3%]"
+  --at-apply: "z-40 pointer-events-none fixed overflow-hidden inset-0 -left-[200%] -r-[200%] w-[400%] h-full bg-[url('/images/framernoise.png')] bg-left-top bg-[length:250px] opacity-[3%]";
 }
 
 h1 {
-	--at-apply: "font-black text-(4xl neutral-100)";
+  --at-apply: "font-black text-(4xl neutral-100)";
 }
 
 h2 {
-	--at-apply: "font-extrabold text-(2xl neutral-100)";
+  --at-apply: "font-extrabold text-(2xl neutral-100)";
 }
 
 h3 {
-	--at-apply: "font-bold text-(xl neutral-100)";
+  --at-apply: "font-bold text-(xl neutral-100)";
 }
 
 .faq h3 {
-	--at-apply: "pb-1";
+  --at-apply: "pb-1";
 }
 
 p {
-	--at-apply: "text-(neutral-300 lg)";
+  --at-apply: "text-(neutral-300 lg)";
 }
 
 b {
-	--at-apply: "font-medium text-neutral-100";
+  --at-apply: "font-medium text-neutral-100";
 }
 
 a {
-	--at-apply: "text-themeAccent hover:underline underline-offset-2";
+  --at-apply: "text-themeAccent hover:underline underline-offset-2";
 }
 
-a:not(:has(> *)){
-	--at-apply: "underline"
+a:not(:has(> *)) {
+  --at-apply: "underline";
 }
 
 article {
-	--at-apply: "text-justify";
+  --at-apply: "text-justify";
 }
 
 article a {
-	--at-apply: "text-neutral-100 font-medium underline underline-offset-2";
+  --at-apply: "text-neutral-100 font-medium underline underline-offset-2";
 }
 
 textarea {
-	--at-apply: "w-full text-16px";
+  --at-apply: "w-full text-16px";
 }
 
 input {
-	--at-apply: "text-16px";
+  --at-apply: "text-16px";
 }
 
 content {
-	line-height: 1.6;
+  line-height: 1.6;
 }
 
 img {
-	--at-apply: "max-w-full h-auto my-8 rounded-xl border border-neutral-800";
+  --at-apply: "max-w-full h-auto my-8 rounded-xl border border-neutral-800";
 }
 
 code {
-	--at-apply: "font-martian text-(sm neutral-100) bg-themeBlack p-2.5px rounded border border-neutral-800";
+  --at-apply: "font-martian text-(sm neutral-100) bg-themeBlack p-2.5px rounded border border-neutral-800";
 }
 
 pre {
-	--at-apply: "font-martian rounded-xl border border-neutral-800 p-4 my-8 text-sm scrollbar scrollbar-w-8px scrollbar-h-8px scrollbar-thumb-color-neutral-700 scrollbar-track-color-neutral-600 scrollbar-rounded  overflow-y-auto";
+  --at-apply: "font-martian rounded-xl border border-neutral-800 p-4 my-8 text-sm scrollbar scrollbar-w-8px scrollbar-h-8px scrollbar-thumb-color-neutral-700 scrollbar-track-color-neutral-600 scrollbar-rounded  overflow-y-auto";
 }
 
-pre>code {
-	--at-apply: "font-martian";
-	all: unset;
+pre > code {
+  --at-apply: "font-martian";
+  all: unset;
 }
 
 blockquote {
-	--at-apply: "rounded-xl bg-themeBlack border border-neutral-700 p-4";
+  --at-apply: "rounded-xl bg-themeBlack border border-neutral-700 p-4";
 }
 
 ul,
 ol {
-	--at-apply: "ml-8";
+  --at-apply: "ml-8";
 }
 
-ul>li {
-	--at-apply: "list-disc text-lg pb-2";
+ul > li {
+  --at-apply: "list-disc text-lg pb-2";
 }
 
-ul>li::marker {
-	--at-apply: "text-neutral-500";
+ul > li::marker {
+  --at-apply: "text-neutral-500";
 }
 
-ol>li {
-	--at-apply: "list-decimal text-lg pb-2";
+ol > li {
+  --at-apply: "list-decimal text-lg pb-2";
 }
 
 .text-john {
-	color: transparent;
-	background: linear-gradient(322deg, #ff1b6b, #45caff);
-	background-clip: text;
-	-webkit-background-clip: text;
-
+  color: transparent;
+  background: linear-gradient(322deg, #ff1b6b, #45caff);
+  background-clip: text;
+  -webkit-background-clip: text;
 }

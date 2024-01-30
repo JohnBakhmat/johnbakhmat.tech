@@ -10,7 +10,7 @@ import unocss from "unocss/astro";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://johnbakhmat-dev.vercel.app",
+	site: "https://johnbakhmat.tech",
 	output: "server",
 	adapter: node({ mode: "standalone" }),
 	integrations: [unocss(), mdx(), sitemap(), react(), prefetch()],
