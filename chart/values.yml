@@ -25,4 +25,4 @@ resources:
 
 # populated by the ArgoCD application
 devhosting:
-  appname: ""
+  appname: ''
