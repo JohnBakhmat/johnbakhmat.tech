@@ -15,10 +15,7 @@
 		"lineWidth": 80
 	},
 	"files": {
-		"ignore": [
-			"node_modules/**/*",
-			"**/*.xml.js"
-		],
+		"ignore": ["node_modules/**/*", "**/*.xml.js"],
 		"ignoreUnknown": true
 	}
 }

@@ -87,7 +87,7 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
       try {
         return (
           /^localhost$|^127(\.[0-9]+){0,2}\.[0-9]+$|^\[::1?\]$/.test(
-            location.hostname
+            location.hostname,
           ) ||
           "file:" === location.protocol ||
           window._phantom ||

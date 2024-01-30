@@ -3,31 +3,8 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import Project from "../components/Project.astro";
+import ProjectSection from "../components/ProjectSection";
 import { Age } from "../components/Age";
-import {type Repo} from './repo.ts'
-
-type Response = {
-    Name:string,
-    Description: string,
-    Url: string,
-    Stars: number,
-    Forks: number,
-    Languages: string[]
-}[]
-
-const pinnedRepos = await fetch(
-  "https://pinned.fly.dev/projects/johnbakhmat",
-).then(async (response) => {
-  return ((await response.json()) as Response).map((i) => ({
-    name: i.Name,
-    description: i.Description,
-    url:i.Url,
-    stars: i.Stars,
-    forks: i.Forks,
-    languages: i.Languages
-  }as Repo));
-}).catch((_error)=> []);
 ---
 
 <!doctype html>
@@ -40,13 +17,11 @@ const pinnedRepos = await fetch(
     <main class="text-lg text-neutral-200">
       <h1 class="text-4xl pb-2">Hi, I'm <span class="text-john">John</span></h1>
       <p>
-        I'm <Age client:visible />
-         y/o software engineer. I'm Bachelor of Computer Science. Blah blah.
+        I'm <Age client:only />
+        y/o software engineer. I'm Bachelor of Computer Science. Blah blah.
         <b>I build stuff</b>. I like <b>web dev</b>, <b>game dev</b> and so much
-        more. My main focus is full-stack stuff with <b>Typescript</b> and
-        writing
-        <s> very important</s> projects with <b>Rust</b> to train my monkey
-        brain.
+        more. My main focus is full-stack stuff with <b>Typescript</b> and writing
+        <s> very important</s> projects with <b>Rust</b> to train my monkey brain.
       </p>
       <p
         class="blur-sm hover:blur-none duration-100 transition-all ease-in-out text-white"
@@ -57,31 +32,11 @@ const pinnedRepos = await fetch(
         If I feel fancy, I like doing research on random topics, engineering
         ones will end up as <a href="/blog">blog posts</a>. Sometimes you can
         also find me in <b>Warframe</b> grinding <b>prime relics</b>
-         or in <b>Endless Space 2</b> conquering the galaxy.
+        or in <b>Endless Space 2</b> conquering the galaxy.
       </p>
       <br />
       <h2 class="text-3xl pb-4">Things I've built or contributed to</h2>
-      <section
-        class="grid grid-cols-1 gap-4 auto-cols-max sm:grid-cols-2 sm:gap-3 place-items-center"
-      >
-        {pinnedRepos.length > 0 ?
-          pinnedRepos.map((repo) => {
-            return (
-              <Project
-                repo={repo}
-                />
-                );
-            })
-          :(
-                  <div class="col-span-full row-span-full flex flex-col place-content-center text-center">
-                  <p>
-                  OOps can't get project info! If you see this, <a href="mailto:johnbakhmat@gmail.com/?subject=Yo, your site project api broke">contact me</a> ASAP!
-                  </p>
-                  <h1>☹</h1>
-                  </div>
-           )
-        }
-      </section>
+      <ProjectSection client:load />
     </main>
     <Footer />
   </body>
