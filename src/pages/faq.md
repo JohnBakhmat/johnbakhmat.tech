@@ -19,7 +19,7 @@ Building stuff. © <a href="https://nexxel.dev/">nexxel</a>
 
 ### What programming languages do you know?
 
-I'm most comfortable with [TypeScript](https://typescriptlang.org). I've built some stuff with [C#](https://dotnet.microsoft.com/) but I'm not going back. I also write some [Elixir](https://elixir-lang.org/) and [Rust](https://rust-lang.org).
+I'm most comfortable with [TypeScript](https://typescriptlang.org). I've built some stuff with [C#](https://dotnet.microsoft.com/) but I'm not going back. I also write some [Elixir](https://elixir-lang.org/) and [Rust](https://rust-lang.org) as well as [Gleam](https://gleam.run) and [OCaml](https://ocaml.org).
 
 <br />
 
@@ -38,13 +38,13 @@ The main focus now is a project called [rss-alligator] that is supposed to be a 
 
 ### What code editor do you use?
 
-I'm trying to learn [Neovim](https://neovim.io), but [VSCode](https://code.visualstudio.com) is the one that flows through my vains.
+I use [Neovim](https://neovim.io). Here is [my config](https://github.com/johnbakhmat/kickstart.nvim).
 
 <br />
 
 ### What theme do you use?
 
-I use [Kanagawa Dragon](https://github.com/rebelot/kanagawa.nvim) for Neovim, [Vesper](https://github.com/raunofreiberg/vesper) for VS Code.
+I use [Catppuccin](https://github.com/catppuccin)
 <br />
 
 ### What font do you use for coding?
