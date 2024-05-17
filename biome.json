@@ -11,7 +11,8 @@
 	},
 	"formatter": {
 		"enabled": true,
-		"indentStyle": "tab",
+		"indentStyle": "space",
+		"indentSize":4,
 		"lineWidth": 80
 	},
 	"files": {
