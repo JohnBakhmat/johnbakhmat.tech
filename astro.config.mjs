@@ -1,6 +1,5 @@
 import mdx from "@astrojs/mdx";
 import node from "@astrojs/node";
-import prefetch from "@astrojs/prefetch";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import { defineConfig } from "astro/config";
@@ -13,7 +12,7 @@ export default defineConfig({
 	site: "https://johnbakhmat.tech",
 	output: "server",
 	adapter: node({ mode: "standalone" }),
-	integrations: [unocss(), mdx(), sitemap(), react(), prefetch()],
+	integrations: [unocss(), mdx(), sitemap(), react()],
 	markdown: {
 		extendDefaultPlugins: true,
 		rehypePlugins: [rehypeAutolinkHeadings],
