@@ -21,4 +21,11 @@ export default defineConfig({
 			theme: loadTheme("./vesper-theme.json"),
 		},
 	},
+	prefetch: {
+		prefetchAll: true,
+		defaultStrategy: 'viewport',
+	},
+	experimental: {
+		clientPrerender: true,
+	},
 });
