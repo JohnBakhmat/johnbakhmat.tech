@@ -15,10 +15,10 @@ export default defineConfig({
 			mono: "Martian Mono",
 		},
 		colors: {
-			themeText: "#E69C51",
+			themeText: "#FF00FF",
 			vitesseGreen: "#4d9375",
 			themeBlack: "#121212",
-			themeAccent: "#E69C51",
+			themeAccent: "#00FF00",
 		},
 	},
 });

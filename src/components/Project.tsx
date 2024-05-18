@@ -13,7 +13,7 @@ export function Project({ repo }: Props) {
         >
             <div className="h-36 flex flex-col justify-between gap-y-2 border border-neutral-700 bg-themeBlack hover:scale-105 ease-out transition-transform p-4 rounded-xl">
                 <div className="flex flex-col gap-y-2">
-                    <span className="text-(xl themeText) font-medium">
+                    <span className="text-(xl themeAccent) font-medium">
                         {repo.name}
                     </span>
                     <p className="text-(sm neutral-200)">{repo.description}</p>
