@@ -42,7 +42,7 @@ html {
 }
 
 body {
-  --at-apply: "font-sans p-5 m-auto max-w-80ch text-(left neutral-300) bg-neutral-900 break-words leading-6 antialiased";
+  --at-apply: "font-sans p-5 m-auto max-w-80ch text-(left neutral-300) bg-neutral-900 break-words leading-6 antialiased flex flex-col min-h-screen";
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
   word-wrap: break-word;
@@ -62,6 +62,9 @@ body {
     "Helvetica Neue",
     sans-serif;
   font-display: swap;
+}
+main{
+  --at-apply:"flex-grow flex flex-col"
 }
 
 .grain {

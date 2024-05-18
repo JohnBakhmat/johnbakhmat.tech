@@ -51,7 +51,7 @@ const HasRepos = (repos) =>
 
 export default function ProjectSection() {
     return (
-        <section className="w-full grid grid-cols-1 gap-4 auto-cols-max sm:grid-cols-2 sm:gap-3 place-items-center">
+        <section className="flex-grow w-full grid grid-cols-1 gap-4 auto-cols-max sm:grid-cols-2 sm:gap-3 place-items-center">
             {pinnedRepos.length > 0 ? HasRepos(pinnedRepos) : NoRepo()}
         </section>
     );
