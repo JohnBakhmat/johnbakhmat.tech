@@ -11,14 +11,11 @@ export default defineConfig({
 	transformers: [transformerDirectives(), transformerVariantGroup()],
 	theme: {
 		fontFamily: {
-			martian: "Martian Mono",
 			mono: "Martian Mono",
 		},
 		colors: {
-			themeText: "#E69C51",
-			vitesseGreen: "#4d9375",
 			themeBlack: "#121212",
-			themeAccent: "#E69C51",
+			themeAccent: "#71e795",
 		},
 	},
 });

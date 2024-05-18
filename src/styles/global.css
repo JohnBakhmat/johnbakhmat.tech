@@ -42,7 +42,7 @@ html {
 }
 
 body {
-  --at-apply: "font-sans p-5 m-auto max-w-80ch text-(left neutral-300) bg-neutral-900 break-words leading-6 antialiased";
+  --at-apply: "font-sans p-5 m-auto max-w-80ch text-(left neutral-300) bg-neutral-900 break-words leading-6 antialiased flex flex-col min-h-screen";
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
   word-wrap: break-word;
@@ -63,9 +63,25 @@ body {
     sans-serif;
   font-display: swap;
 }
+main{
+  --at-apply:"flex-grow flex flex-col"
+}
 
 .grain {
-  --at-apply: "z-40 pointer-events-none fixed overflow-hidden inset-0 -left-[200%] -r-[200%] w-[400%] h-full bg-[url('/images/framernoise.png')] bg-left-top bg-[length:250px] opacity-[3%]";
+  --at-apply: "z-40 pointer-events-none fixed overflow-hidden inset-0 -left-[200%] -r-[200%] w-[400%] h-full bg-[url('/images/framernoise.png')] bg-left-top bg-[length:250px]";
+  opacity: 0.03;
+}
+
+@-moz-document url-prefix(){
+  .grain{
+    opacity:0.01;
+  }
+}
+
+@media(prefers-reduced-transparency){
+  .grain{
+    display:none;
+  }
 }
 
 h1 {
@@ -125,15 +141,15 @@ img {
 }
 
 code {
-  --at-apply: "font-martian text-(sm neutral-100) bg-themeBlack p-2.5px rounded border border-neutral-800";
+  --at-apply: "font-mono text-(sm neutral-100) bg-themeBlack p-2.5px rounded border border-neutral-800";
 }
 
 pre {
-  --at-apply: "font-martian rounded-xl border border-neutral-800 p-4 my-8 text-sm scrollbar scrollbar-w-8px scrollbar-h-8px scrollbar-thumb-color-neutral-700 scrollbar-track-color-neutral-600 scrollbar-rounded  overflow-y-auto";
+  --at-apply: "font-mono rounded-xl border border-neutral-800 p-4 my-8 text-sm scrollbar scrollbar-w-8px scrollbar-h-8px scrollbar-thumb-color-neutral-700 scrollbar-track-color-neutral-600 scrollbar-rounded  overflow-y-auto";
 }
 
 pre > code {
-  --at-apply: "font-martian";
+  --at-apply: "font-mono";
   all: unset;
 }
 
