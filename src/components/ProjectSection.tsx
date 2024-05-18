@@ -41,7 +41,7 @@ function NoRepo() {
                 </a>{" "}
                 ASAP!
             </p>
-            <h1>☹</h1>
+            <h1>&#x1F615;</h1>
         </div>
     );
 }
