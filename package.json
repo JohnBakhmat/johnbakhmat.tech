@@ -18,7 +18,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "biome format ./src "
+    "format": "prettier -w ./src"
   },
   "dependencies": {
     "@astrojs/mdx": "^3.0.0",

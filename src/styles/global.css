@@ -63,8 +63,8 @@ body {
     sans-serif;
   font-display: swap;
 }
-main{
-  --at-apply:"flex-grow flex flex-col"
+main {
+  --at-apply: "flex-grow flex flex-col";
 }
 
 .grain {
@@ -72,15 +72,15 @@ main{
   opacity: 0.03;
 }
 
-@-moz-document url-prefix(){
-  .grain{
-    opacity:0.01;
+@-moz-document url-prefix() {
+  .grain {
+    opacity: 0.01;
   }
 }
 
-@media(prefers-reduced-transparency){
-  .grain{
-    display:none;
+@media (prefers-reduced-transparency) {
+  .grain {
+    display: none;
   }
 }
 

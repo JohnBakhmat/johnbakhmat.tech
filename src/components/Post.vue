@@ -1,13 +1,18 @@
 <script setup lang="ts">
 import { type CollectionEntry } from "astro:content";
 import { defineProps } from "vue";
-const { data: props } = defineProps < { data: CollectionEntry<"blog"> }();
-console.log(props);
+
+const props = defineProps<CollectionEntry<"blog">>();
+const dateString = new Date(props.pubDate).toLocaleDateString("en-uk", {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+});
 </script>
 
 <template>
   <a
-    href=""
+    :href="`/blog/${props.slug}`"
     rel="prefetch"
     class="flex flex-col gap-y-3 hover:no-underline hover:bg-neutral-800 p-4 mb-8 transition-colors rounded-xl"
   >
@@ -18,7 +23,7 @@ console.log(props);
     <div
       class="flex items-center gap-x-2 text-neutral-200 text-xs md:text-sm font-medium"
     >
-      <time :datetime="props.pubDate"> </time>
+      <time :datetime="props.pubDate"> {{ dateString }} </time>
       <span>•</span>
       <span>{{ props.readingTime }}</span>
     </div>
