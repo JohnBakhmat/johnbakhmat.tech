@@ -4,7 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import ProjectSection from "../components/ProjectSection";
-import { Age } from "../components/Age";
+import Age  from "../components/Age.vue";
 ---
 
 <!doctype html>
@@ -17,7 +17,7 @@ import { Age } from "../components/Age";
     <main class="text-lg text-neutral-200">
       <h1 class="text-4xl pb-2">Hi, I'm <span class="text-john">John</span></h1>
       <p>
-        I'm <Age client:only="react" />
+        I'm <Age client:only="vue" />
         y/o software engineer. I'm Bachelor of Computer Science. Blah blah.
         <b>I build stuff</b>. I like <b>web dev</b>, <b>game dev</b> and so much
         more. My main focus is full-stack stuff with <b>Typescript</b> and writing

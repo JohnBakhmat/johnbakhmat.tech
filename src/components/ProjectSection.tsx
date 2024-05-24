@@ -10,7 +10,9 @@ type Response = {
     Languages: string[];
 }[];
 
-const pinnedRepos = await fetch("https://pinned.johnbakhmat.tech/projects/johnbakhmat")
+const pinnedRepos = await fetch(
+    "https://pinned.johnbakhmat.tech/projects/johnbakhmat",
+)
     .then((r) => r.json())
     .then((json) => json as Response)
     .then((r) =>

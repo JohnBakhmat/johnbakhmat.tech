@@ -26,6 +26,7 @@
     "@astrojs/react": "^3.3.4",
     "@astrojs/rss": "^4.0.6",
     "@astrojs/sitemap": "^3.1.4",
+    "@astrojs/vue": "^4.3.0",
     "@headlessui/react": "^1.7.19",
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
@@ -37,7 +38,8 @@
     "reading-time": "^1.5.0",
     "rehype-autolink-headings": "^6.1.1",
     "shiki": "^0.14.7",
-    "shiki-themes": "^0.2.7"
+    "shiki-themes": "^0.2.7",
+    "vue": "^3.4.27"
   },
   "devDependencies": {
     "@biomejs/biome": "1.0.0",
