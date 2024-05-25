@@ -39,6 +39,7 @@
     "rehype-autolink-headings": "^6.1.1",
     "shiki": "^0.14.7",
     "shiki-themes": "^0.2.7",
+    "typescript": "^5.4.5",
     "vue": "^3.4.27"
   },
   "devDependencies": {
