@@ -3,6 +3,7 @@ import BaseHead from "../../components/BaseHead.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { BlogView } from "../../components/BlogView";
+import NewBlogView from "@components/BlogView.vue"
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import { addReadTimes } from "../../utils/read-time";
@@ -24,6 +25,7 @@ const posts = (
     <main>
       <h1 class="pb-6">Blog</h1>
       <BlogView client:load posts={posts} />
+      <NewBlogView client:load posts={posts} />
     </main>
     <Footer />
   </body>

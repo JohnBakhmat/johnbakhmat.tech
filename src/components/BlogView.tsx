@@ -1,4 +1,4 @@
-import { type CollectionEntry } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import Fuse from "fuse.js";
 import { useState, useRef, useEffect } from "react";
 import { Post } from "../components/Post";
