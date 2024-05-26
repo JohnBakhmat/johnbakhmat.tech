@@ -1,10 +1,51 @@
 <script setup lang="ts">
-import { ref, reactive } from "vue";
+import { ref, reactive, onMounted, watch } from "vue";
+import Fuse from "fuse.js";
 import type { CollectionEntry } from "astro:content";
 import Post from "../components/Post.vue";
 const { posts } = defineProps<{ posts: CollectionEntry<"blog">[] }>();
 const query = ref("");
-const searchResult = reactive<Fuse.FuseResult<PostType>[] | null>();
+const searchResult = ref<Fuse.FuseResult<PostType>[] | null>();
+
+const inputRef = ref(null);
+const fuse = new Fuse(posts, {
+  keys: [
+    {
+      name: "title",
+      getFn: (post) => post.data.title,
+    },
+    {
+      name: "description",
+      getFn: (post) => post.data.description,
+    },
+  ],
+  threshold: 0.3,
+});
+
+onMounted(() => {
+  const searchParams = new URLSearchParams(window.location.search).get("q");
+  if (searchParams) query.value = searchParams;
+
+  setTimeout(() => {
+    if (inputRef.value) {
+      inputRef.value.selectionStart = inputRef.value.selectionEnd =
+        searchParams.length;
+    }
+  }, 50);
+});
+
+watch(query, async (newQuery, _) => {
+  searchResult.value = newQuery.length > 0 ? fuse.search(newQuery) : null;
+  if (newQuery && newQuery.length > 0) {
+    const searchParams = new URLSearchParams(window.location.search);
+    searchParams.set("q", newQuery);
+
+    const newUrl = `${window.location.pathname}?${searchParams.toString()}`;
+    history.pushState(null, "", newUrl);
+  } else {
+    history.pushState(null, "", window.location.pathname);
+  }
+});
 </script>
 
 <template>
@@ -14,6 +55,13 @@ const searchResult = reactive<Fuse.FuseResult<PostType>[] | null>();
     id="search"
     placeholder="Search posts"
     autoComplete="off"
+    :ref="inputRef"
+    :value="query"
+    @input="
+      (event) => {
+        query = event.target.value;
+      }
+    "
     class="
       w-full
       px-4
@@ -33,5 +81,20 @@ const searchResult = reactive<Fuse.FuseResult<PostType>[] | null>();
   >
     Wow its so empty here &#x1F615;
   </div>
-  {{ JSON.stringify(posts) }}
+
+  <Post
+    v-if="searchResult && searchResult.length !== 0"
+    v-for="post in searchResult"
+    :key="`${post.refIndex}-${post.item.slug}`"
+    :data="post.item"
+  />
+  <div v-else-if="searchResult !== null">
+    <span class="text-(xl neutral-300) p-4">
+      No posts found. Maybe try one of these instead?
+    </span>
+    <Post v-for="post in posts.slice(0, 3)" :key="post.slug" :data="post" />
+  </div>
+  <Post v-else v-for="post in posts" :key="post.slug" :data="post" />
+
+  {{ JSON.stringify({ query, searchResult }) }}
 </template>
