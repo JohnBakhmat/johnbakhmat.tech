@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { Button } from "../components/ui/button";
+import { Button } from "@/components/ui/button";
+import Toaster from "@/components/ui/toast/Toaster.vue";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,15 +14,22 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "../components/ui/dropdown-menu";
+} from "@/components/ui/dropdown-menu";
 import { ref } from "vue";
+import { useToast } from "@/components/ui/toast/use-toast";
+
+const { toast } = useToast();
 
 const handleCopy = () => {
   navigator.clipboard.writeText("johnbakhmat@gmail.com");
+  toast({
+    title: "\u2713 Email successfuly copied to clipboard",
+  });
 };
 </script>
 
 <template>
+  <Toaster />
   <DropdownMenu>
     <DropdownMenuTrigger
       class="

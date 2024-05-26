@@ -20,6 +20,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 <template>
   <ToastRoot
     v-bind="forwarded"
+    class="bg-blackTheme"
     :class="cn(toastVariants({ variant }), props.class)"
     @update:open="onOpenChange"
   >
