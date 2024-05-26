@@ -61,17 +61,7 @@ watch(query, async (newQuery, _) => {
         query = event.target.value;
       }
     "
-    class="
-      w-full
-      px-4
-      py-2
-      text-neutral-200 text-lg
-      placeholder:text-neutral-400
-      bg-neutral-800
-      rounded-xl
-      focus:outline-none focus:ring-2 focus:ring-themeAccent
-      mb-6
-    "
+    class="w-full px-4 py-2 text-neutral-200 text-lg placeholder:text-neutral-400 bg-neutral-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-themeAccent mb-6"
   />
 
   <div
