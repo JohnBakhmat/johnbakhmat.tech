@@ -1,6 +1,7 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import EmailSelect from "./EmailSelect.vue";
+import Toaster from "@/components/ui/toast/Toaster.vue";
 ---
 
 <div class="grain"></div>
@@ -30,4 +31,4 @@ import EmailSelect from "./EmailSelect.vue";
     />
   </div>
 </header>
-<style></style>
+<Toaster client:idle/>

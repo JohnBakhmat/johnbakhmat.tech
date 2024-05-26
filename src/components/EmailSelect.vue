@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { Button } from "@/components/ui/button";
-import Toaster from "@/components/ui/toast/Toaster.vue";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -29,7 +28,6 @@ const handleCopy = () => {
 </script>
 
 <template>
-  <Toaster />
   <DropdownMenu>
     <DropdownMenuTrigger
       class="
