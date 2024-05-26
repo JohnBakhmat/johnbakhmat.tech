@@ -5,8 +5,7 @@ import type { CollectionEntry } from "astro:content";
 import Post from "../components/Post.vue";
 const { posts } = defineProps<{ posts: CollectionEntry<"blog">[] }>();
 const query = ref("");
-const searchResult = ref<Fuse.FuseResult<PostType>[] | null>();
-
+const searchResult = ref<Fuse.FuseResult<PostType>[] | null>(null);
 const inputRef = ref(null);
 const fuse = new Fuse(posts, {
   keys: [
@@ -83,18 +82,16 @@ watch(query, async (newQuery, _) => {
   </div>
 
   <Post
-    v-if="searchResult && searchResult.length !== 0"
+    v-if="searchResult && searchResult.length > 0"
     v-for="post in searchResult"
     :key="`${post.refIndex}-${post.item.slug}`"
-    :data="post.item"
+    :post="post.item"
   />
-  <div v-else-if="searchResult !== null">
+  <template v-else-if="searchResult && searchResult.length === 0">
     <span class="text-(xl neutral-300) p-4">
       No posts found. Maybe try one of these instead?
     </span>
-    <Post v-for="post in posts.slice(0, 3)" :key="post.slug" :data="post" />
-  </div>
-  <Post v-else v-for="post in posts" :key="post.slug" :data="post" />
-
-  {{ JSON.stringify({ query, searchResult }) }}
+    <Post v-for="post in posts.slice(0, 3)" :key="post.slug" :post="post" />
+  </template>
+  <Post v-else v-for="post in posts" :key="post.slug" :post="post" />
 </template>

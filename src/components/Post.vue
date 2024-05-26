@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { defineProps } from "vue";
 import type { CollectionEntry } from "astro:content";
-const props = defineProps<{data:CollectionEntry<"blog">}>();
-const dateString = new Date(props.pubDate).toLocaleDateString("en-uk", {
+const { post } = defineProps<{ post: CollectionEntry<"blog"> }>();
+
+const dateString = new Date(post.data.pubDate).toLocaleDateString("en-us", {
   year: "numeric",
   month: "short",
   day: "numeric",
@@ -11,7 +12,7 @@ const dateString = new Date(props.pubDate).toLocaleDateString("en-uk", {
 
 <template>
   <a
-    :href="`/blog/${props.slug}`"
+    :href="`/blog/${post.slug}`"
     rel="prefetch"
     class="
       flex flex-col
@@ -24,9 +25,9 @@ const dateString = new Date(props.pubDate).toLocaleDateString("en-uk", {
     "
   >
     <h3 class="text-themeAccent text-xl md:text-2xl font-extrabold">
-      {{ props.title }}
+      {{ post.data.title }}
     </h3>
-    <p class="text-sm md:text-base font-medium">{{ props.description }}</p>
+    <p class="text-sm md:text-base font-medium">{{ post.data.description }}</p>
     <div
       class="
         flex
@@ -37,9 +38,9 @@ const dateString = new Date(props.pubDate).toLocaleDateString("en-uk", {
         font-medium
       "
     >
-      <time :datetime="props.pubDate"> {{ dateString }} </time>
+      <time :datetime="post.data.pubDate"> {{ dateString }} </time>
       <span>•</span>
-      <span>{{ props.readingTime }}</span>
+      <span>{{ post.data.readingTime }}</span>
     </div>
   </a>
 </template>

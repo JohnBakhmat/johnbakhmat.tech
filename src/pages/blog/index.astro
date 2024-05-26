@@ -10,7 +10,7 @@ const posts = (
   await getCollection("blog", ({ data }) => {
     return import.meta.env.PROD ? data.draft !== true : true;
   })
-).map(addReadTimes);
+).map(addReadTimes).map((post)=> ({...post, body:undefined}));
 ---
 
 <!doctype html>
