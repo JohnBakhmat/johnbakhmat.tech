@@ -1,6 +1,5 @@
 import mdx from "@astrojs/mdx";
 import node from "@astrojs/node";
-import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import { defineConfig } from "astro/config";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
@@ -16,7 +15,7 @@ export default defineConfig({
     adapter: node({
         mode: "standalone",
     }),
-    integrations: [unocss(), mdx(), sitemap(), react(), vue()],
+    integrations: [unocss(), mdx(), sitemap(), vue()],
     markdown: {
         extendDefaultPlugins: true,
         rehypePlugins: [rehypeAutolinkHeadings],

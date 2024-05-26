@@ -11,19 +11,7 @@ const { repo } = defineProps<{ repo: Repo }>();
     class="hover:no-underline w-full"
   >
     <div
-      class="
-        h-36
-        flex flex-col
-        justify-between
-        gap-y-2
-        border border-neutral-700
-        bg-themeBlack
-        hover:scale-105
-        ease-out
-        transition-transform
-        p-4
-        rounded-xl
-      "
+      class="h-36 flex flex-col justify-between gap-y-2 border border-neutral-700 bg-themeBlack hover:scale-105 ease-out transition-transform p-4 rounded-xl"
     >
       <div class="flex flex-col gap-y-2">
         <span class="text-xl text-themeAccent font-medium">{{

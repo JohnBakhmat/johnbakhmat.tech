@@ -30,30 +30,12 @@ const handleCopy = () => {
 <template>
   <DropdownMenu>
     <DropdownMenuTrigger
-      class="
-        text-themeAccent
-        hover:underline
-        font-medium
-        underline-offset-3px
-        cursor-pointer
-      "
+      class="text-themeAccent hover:underline font-medium underline-offset-3px cursor-pointer"
     >
       Email
     </DropdownMenuTrigger>
     <DropdownMenuContent
-      class="
-        w-56
-        font-mono
-        z-10
-        mt-2
-        w-56
-        rounded-xl
-        border border-neutral-700
-        bg-themeBlack
-        shadow-xl
-        ring-1 ring-black ring-opacity-5
-        focus:outline-none
-      "
+      class="w-56 font-mono z-10 mt-2 w-56 rounded-xl border border-neutral-700 bg-themeBlack shadow-xl ring-1 ring-black ring-opacity-5 focus:outline-none"
     >
       <DropdownMenuItem class="cursor-pointer group" @click="handleCopy">
         <svg
