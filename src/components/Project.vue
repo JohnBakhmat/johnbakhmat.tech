@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { Repo } from "../repo";
 const { repo } = defineProps<{ repo: Repo }>();
-console.log(repo)
 </script>
 
 <template>
