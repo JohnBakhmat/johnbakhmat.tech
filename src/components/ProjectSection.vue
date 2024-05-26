@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Repo } from "../repo";
+import Project from "./Project.vue"
 type Response = Array<{
   Name: string;
   Description: string;
@@ -36,18 +37,26 @@ const repos = await fetch(
 
 <template>
   <section
-    class="flex-grow w-full grid grid-cols-1 gap-4 auto-cols-max sm:grid-cols-2 sm:gap-3 place-items-center"
+    class="
+      flex-grow
+      w-full
+      grid grid-cols-1
+      gap-4
+      auto-cols-max
+      sm:grid-cols-2 sm:gap-3
+      place-items-center
+    "
   >
-    <div
-      v-if="repos.length > 0"
-      v-for="repo in repos"
-      class="bg-red-500 break-all"
-    >
-      {{ JSON.stringify(repo) }}
-    </div>
+    <Project v-if="repos.length > 0" v-for="repo in repos" :repo="repo" />
     <div
       v-else
-      class="col-span-full row-span-full flex flex-col place-content-center text-center"
+      class="
+        col-span-full
+        row-span-full
+        flex flex-col
+        place-content-center
+        text-center
+      "
     >
       <p>
         OOps can't get project info! If you see this,
