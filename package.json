@@ -39,13 +39,13 @@
     "rehype-autolink-headings": "^6.1.1",
     "shiki": "^0.14.7",
     "shiki-themes": "^0.2.7",
-    "typescript": "^5.4.5",
     "vue": "^3.4.27"
   },
   "devDependencies": {
     "@unocss/reset": "^0.55.7",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
+    "typescript": "^5.4.5",
     "unocss": "^0.60.3",
     "unocss-preset-scrollbar": "^0.2.1"
   }

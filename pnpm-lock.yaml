@@ -59,9 +59,6 @@ dependencies:
   shiki-themes:
     specifier: ^0.2.7
     version: 0.2.7
-  typescript:
-    specifier: ^5.4.5
-    version: 5.4.5
   vue:
     specifier: ^3.4.27
     version: 3.4.27(typescript@5.4.5)
@@ -76,6 +73,9 @@ devDependencies:
   prettier-plugin-astro:
     specifier: ^0.13.0
     version: 0.13.0
+  typescript:
+    specifier: ^5.4.5
+    version: 5.4.5
   unocss:
     specifier: ^0.60.3
     version: 0.60.3(postcss@8.4.38)(vite@5.2.11)
@@ -4943,7 +4943,6 @@ packages:
     resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
     engines: {node: '>=14.17'}
     hasBin: true
-    dev: false
 
   /ufo@1.5.3:
     resolution: {integrity: sha512-Y7HYmWaFwPUmkoQCUIAYpKqkOf+SbVj/2fJJZ4RJMCfZp0rTGwRbzQD+HghfnhKOjL9E01okqz+ncJskGYfBNw==}
