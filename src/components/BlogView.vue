@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import Post from "@components/Post.vue";
+import { ref, reactive } from "vue";
 import type { CollectionEntry } from "astro:content";
-const props = defineProps<{ posts: CollectionEntry<"blog">[] }>();
+import Post from "../components/Post.vue";
+const { posts } = defineProps<{ posts: CollectionEntry<"blog">[] }>();
 const query = ref("");
 const searchResult = reactive<Fuse.FuseResult<PostType>[] | null>();
 </script>
@@ -26,4 +26,12 @@ const searchResult = reactive<Fuse.FuseResult<PostType>[] | null>();
       mb-6
     "
   />
+
+  <div
+    v-if="posts.length === 0"
+    class="text-3xl text-center text-gray-500 my-10"
+  >
+    Wow its so empty here &#x1F615;
+  </div>
+  {{ JSON.stringify(posts) }}
 </template>
