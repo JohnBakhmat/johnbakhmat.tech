@@ -8,7 +8,8 @@ type Response = Array<{
   Forks: number;
   Languages: string[];
 }>;
-
+const mailto =
+  "mailto:johnbakhmat@gmail.com/?subject=Yo, your site project api broke";
 const repos = await fetch(
   "https://pinned.johnbakhmat.tech/projects/johnbakhmat",
 )
@@ -34,5 +35,26 @@ const repos = await fetch(
 </script>
 
 <template>
-  {{ repos }}
+  <section
+    class="flex-grow w-full grid grid-cols-1 gap-4 auto-cols-max sm:grid-cols-2 sm:gap-3 place-items-center"
+  >
+    <div
+      v-if="repos.length > 0"
+      v-for="repo in repos"
+      class="bg-red-500 break-all"
+    >
+      {{ JSON.stringify(repo) }}
+    </div>
+    <div
+      v-else
+      class="col-span-full row-span-full flex flex-col place-content-center text-center"
+    >
+      <p>
+        OOps can't get project info! If you see this,
+        <a :href="mailto"> contact me </a>
+        ASAP!
+      </p>
+      <h1>&#x1F615;</h1>
+    </div>
+  </section>
 </template>
