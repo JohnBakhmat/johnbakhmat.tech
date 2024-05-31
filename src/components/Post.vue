@@ -14,7 +14,7 @@ const dateString = new Date(post.data.pubDate).toLocaleDateString("en-us", {
   <a
     :href="`/blog/${post.slug}`"
     rel="prefetch"
-    class="flex flex-col gap-y-3 hover:no-underline hover:bg-neutral-800 p-4 mb-8 transition-colors rounded-xl"
+    class="flex flex-col gap-y-3 hover:no-underline hover:bg-neutral-800 p-4 transition-colors rounded-xl"
   >
     <h3 class="text-themeAccent text-xl md:text-2xl font-extrabold">
       {{ post.data.title }}
