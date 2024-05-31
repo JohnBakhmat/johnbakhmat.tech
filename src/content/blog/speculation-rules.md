@@ -23,5 +23,13 @@ experience for you by rendering pages even before you try to load them.
 So, two weeks ago (May 2024), Barry Pollard was talking on Google I/O conf
 about this new feature that is called **"Speculation Rules API** that aims to
 reduce page rendering time, by starting the render even before user actually
-clicks the link. Developer can specify what pages can use this feature, what -
+clicks the link.
+
+Developer can specify what pages can use this feature, what -
 not; when does it actually starts to render: for example on link hover.
+
+## References
+
+1. [From fast loading to instant loading](https://youtu.be/bSua9vMdrNM?si=6xsEWYH-7lSRYtfA)
+2. [Prerender pages in Chrome for instant page navigations](https://developer.chrome.com/docs/web-platform/prerender-pages)
+3. [Improvements to the Speculation Rules API ](https://developer.chrome.com/blog/speculation-rules-improvements/)
