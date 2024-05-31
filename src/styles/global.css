@@ -47,20 +47,9 @@ body {
   scroll-behavior: smooth;
   word-wrap: break-word;
   width: 100%;
-  font-family:
-    "Satoshi-Variable",
-    "Satoshi-Variable Fallback",
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
-    sans-serif;
+  font-family: "Satoshi-Variable", "Satoshi-Variable Fallback", system-ui,
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-display: swap;
 }
 main {
@@ -89,7 +78,7 @@ h1 {
 }
 
 h2 {
-  --at-apply: "font-extrabold text-(2xl neutral-100)";
+  --at-apply: "font-extrabold text-(2xl neutral-100) py-3";
 }
 
 h3 {
@@ -101,7 +90,7 @@ h3 {
 }
 
 p {
-  --at-apply: "text-(neutral-300 lg)";
+  --at-apply: "text-(neutral-300 lg) py-2";
 }
 
 b {
