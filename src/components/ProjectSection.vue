@@ -1,14 +1,7 @@
 <script setup lang="ts">
 import type { Repo } from "../repo";
 import Project from "./Project.vue";
-type Response = Array<{
-  Name: string;
-  Description: string;
-  Url: string;
-  Stars: number;
-  Forks: number;
-  Languages: string[];
-}>;
+
 const mailto =
   "mailto:johnbakhmat@gmail.com/?subject=Yo, your site project api broke";
 const repos = await fetch(
@@ -16,19 +9,7 @@ const repos = await fetch(
 )
   .then((res) => res.json())
   .then((json) => json as Response)
-  .then((repos) =>
-    repos.map(
-      (repo) =>
-        ({
-          name: repo.Name,
-          description: repo.Description,
-          url: repo.Url,
-          stars: repo.Stars,
-          forks: repo.Forks,
-          languages: repo.Languages,
-        }) satisfies Repo,
-    ),
-  )
+  .then((repos) => repos satisfies Array<Project>)
   .catch((error) => {
     console.error("Failed to fetch pinned repos: ", error);
     return [];
