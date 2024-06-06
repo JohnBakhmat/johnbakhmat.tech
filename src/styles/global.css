@@ -98,7 +98,7 @@ h3 {
 }
 
 p {
-  --at-apply: "text-(neutral-300 lg)";
+  --at-apply: "text-(neutral-300 md) lg:text-lg";
 }
 
 b {
