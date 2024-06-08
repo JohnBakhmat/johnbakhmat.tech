@@ -29,5 +29,6 @@ export default defineConfig({
     },
     experimental: {
         clientPrerender: true,
+        actions: true,
     },
 });
