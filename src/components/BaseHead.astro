@@ -95,7 +95,7 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
         d: "johnbakhmat.tech",
         r: document.referrer || null,
         p: extra?.props ?? undefined,
-        m: extra?.meta ?? undefined,
+        m: extra?.meta ? JSON.stringify(extra.meta) : undefined,
       };
 
       fetch("/_internal/stats", {
