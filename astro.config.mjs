@@ -32,4 +32,8 @@ export default defineConfig({
     clientPrerender: true,
     actions: true,
   },
+  redirects: {
+    "/tools": "/uses",
+    "/blog/[...slug]": "/articles/[...slug]",
+  },
 });
