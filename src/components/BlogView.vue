@@ -61,13 +61,13 @@ watch(query, async (newQuery, _) => {
         query = event.target.value;
       }
     "
-    class="w-full px-4 py-2 text-neutral-200 text-lg placeholder:text-neutral-400 bg-neutral-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-themeAccent mb-6"
+    class="focus:ring-themeAccent mb-6 w-full rounded-xl bg-neutral-800 px-4 py-2 text-lg text-neutral-200 placeholder:text-neutral-400 focus:outline-none focus:ring-2"
   />
 
   <div class="flex flex-col gap-3">
     <div
       v-if="posts.length === 0"
-      class="text-3xl text-center text-gray-500 my-10"
+      class="my-10 text-center text-3xl text-gray-500"
     >
       Wow its so empty here &#x1F615;
     </div>

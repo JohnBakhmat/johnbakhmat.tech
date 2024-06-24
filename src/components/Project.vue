@@ -8,20 +8,20 @@ const { repo } = defineProps<{ repo: Repo }>();
     :href="repo.url"
     target="_blank"
     rel="noreferrer"
-    class="hover:no-underline w-full"
+    class="w-full hover:no-underline"
   >
     <div
-      class="h-36 flex flex-col justify-between gap-y-2 border border-neutral-700 bg-themeBlack hover:scale-105 ease-out transition-transform p-4 rounded-xl"
+      class="bg-themeBlack flex h-36 flex-col justify-between gap-y-2 rounded-xl border border-neutral-700 p-4 transition-transform ease-out hover:scale-105"
     >
       <div class="flex flex-col gap-y-2">
-        <span class="text-xl text-themeAccent font-medium">{{
+        <span class="text-themeAccent text-xl font-medium">{{
           repo.name
         }}</span>
         <p class="text-sm text-neutral-200">{{ repo.description }}</p>
       </div>
 
-      <div class="flex items-center gap-x-2 text-(sm neutral-200)">
-        <div class="flex gap-x-1 items-center">
+      <div class="text-(sm neutral-200) flex items-center gap-x-2">
+        <div class="flex items-center gap-x-1">
           <span id="stars" title="stars">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +29,7 @@ const { repo } = defineProps<{ repo: Repo }>();
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              class="w-5 h-5"
+              class="h-5 w-5"
               role="img"
             >
               <path

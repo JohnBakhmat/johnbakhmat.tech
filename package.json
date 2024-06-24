@@ -48,8 +48,14 @@
     "@unocss/reset": "^0.55.7",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
+    "prettier-plugin-svelte": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "tailwindcss": "^3.4.4",
     "typescript": "^5.5.2",
     "unocss": "^0.60.3",
     "unocss-preset-scrollbar": "^0.2.1"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^3.4.4"
   }
 }

@@ -14,14 +14,14 @@ const dateString = new Date(post.data.pubDate).toLocaleDateString("en-us", {
   <a
     :href="`/blog/${post.slug}`"
     rel="prefetch"
-    class="flex flex-col gap-y-3 hover:no-underline hover:bg-neutral-800 p-4 transition-colors rounded-xl"
+    class="flex flex-col gap-y-3 rounded-xl p-4 transition-colors hover:bg-neutral-800 hover:no-underline"
   >
-    <h3 class="text-themeAccent text-xl md:text-2xl font-extrabold">
+    <h3 class="text-themeAccent text-xl font-extrabold md:text-2xl">
       {{ post.data.title }}
     </h3>
-    <p class="text-sm md:text-base font-medium">{{ post.data.description }}</p>
+    <p class="text-sm font-medium md:text-base">{{ post.data.description }}</p>
     <div
-      class="flex items-center gap-x-2 text-neutral-200 text-xs md:text-sm font-medium"
+      class="flex items-center gap-x-2 text-xs font-medium text-neutral-200 md:text-sm"
     >
       <time :datetime="post.data.pubDate"> {{ dateString }} </time>
       <span>•</span>

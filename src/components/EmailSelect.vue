@@ -30,21 +30,21 @@ const handleCopy = () => {
 <template>
   <DropdownMenu>
     <DropdownMenuTrigger
-      class="text-themeAccent hover:underline font-medium underline-offset-3px cursor-pointer"
+      class="text-themeAccent underline-offset-3px cursor-pointer font-medium hover:underline"
     >
       Email
     </DropdownMenuTrigger>
     <DropdownMenuContent
-      class="w-56 font-mono z-10 mt-2 w-56 rounded-xl border border-neutral-700 bg-themeBlack shadow-xl ring-1 ring-black ring-opacity-5 focus:outline-none"
+      class="bg-themeBlack z-10 mt-2 w-56 rounded-xl border border-neutral-700 font-mono shadow-xl ring-1 ring-black ring-opacity-5 focus:outline-none"
     >
-      <DropdownMenuItem class="cursor-pointer group" @click="handleCopy">
+      <DropdownMenuItem class="group cursor-pointer" @click="handleCopy">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth="{1.5}"
           stroke="currentColor"
-          class="w-4 h-4 group-hover:-rotate-24deg mr-2"
+          class="group-hover:-rotate-24deg mr-2 h-4 w-4"
         >
           <title>Copy Icon</title>
           <path
@@ -59,14 +59,14 @@ const handleCopy = () => {
       <DropdownMenuSeparator class="bg-neutral-700" />
 
       <a href="mailto:johnbakhmat@gmail.com" target="_blank">
-        <DropdownMenuItem class="text-themeAccent cursor-pointer group">
+        <DropdownMenuItem class="text-themeAccent group cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth="{1.5}"
             stroke="currentColor"
-            class="w-4 h-4 group-hover:-rotate-24deg mr-2"
+            class="group-hover:-rotate-24deg mr-2 h-4 w-4"
           >
             <title>Send Icon</title>
             <path
