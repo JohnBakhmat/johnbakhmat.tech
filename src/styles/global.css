@@ -41,11 +41,12 @@ html {
 }
 
 body {
-  --at-apply: "font-sans p-5 m-auto lg:max-w-60vw max-w-screen text-(left neutral-300) bg-neutral-900 break-words leading-6 antialiased flex flex-col min-h-screen";
+  --at-apply: "font-sans p-5 m-auto lg:max-w-60vw max-w-screen text-(left neutral-300) break-words leading-6 antialiased flex flex-col min-h-screen";
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
   word-wrap: break-word;
   width: 100%;
+  background: radial-gradient(circle at 50%, #111 0%,#00222210 100%);
   font-family:
     "Satoshi-Variable",
     "Helvetica Neue",
