@@ -5,7 +5,7 @@
   "tsConfigPath": "./tsconfig.json",
   "tailwind": {
     "config": "tailwind.config.mjs",
-    "css": "src/styles/globals.css",
+    "css": "src/styles/shadcn.css",
     "baseColor": "zinc",
     "cssVariables": true
   },

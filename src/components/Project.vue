@@ -11,16 +11,16 @@ const { repo } = defineProps<{ repo: Repo }>();
     class="hover:no-underline w-full"
   >
     <div
-      class="h-36 flex flex-col justify-between gap-y-2 border border-neutral-700 bg-themeBlack hover:scale-105 ease-out transition-transform p-4 rounded-xl"
+      class="h-36 3xl:h-46 flex flex-col justify-between gap-y-2 border border-neutral-700 bg-themeBlack hover:scale-105 ease-out transition-transform p-4 rounded-xl"
     >
       <div class="flex flex-col gap-y-2">
-        <span class="text-xl text-themeAccent font-medium">{{
+        <span class="text-xl 3xl:text-4xl text-themeAccent font-medium">{{
           repo.name
         }}</span>
-        <p class="text-sm text-neutral-200">{{ repo.description }}</p>
+        <p class="text-sm 3xl:text-2xl text-neutral-200">{{ repo.description }}</p>
       </div>
 
-      <div class="flex items-center gap-x-2 text-(sm neutral-200)">
+      <div class="flex items-center gap-x-2 text-(sm neutral-200) 3xl:text-2xl">
         <div class="flex gap-x-1 items-center">
           <span id="stars" title="stars">
             <svg
@@ -43,7 +43,7 @@ const { repo } = defineProps<{ repo: Repo }>();
         </div>
 
         <span>•</span>
-        <div class="text-sm">{{ repo.languages.join(", ") }}</div>
+        <div>{{ repo.languages.join(", ") }}</div>
       </div>
     </div>
   </a>

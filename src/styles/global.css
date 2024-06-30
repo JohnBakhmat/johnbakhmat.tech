@@ -86,7 +86,7 @@ h1 {
 }
 
 h2 {
-  --at-apply: "font-extrabold text-(2xl neutral-100)";
+  --at-apply: "font-extrabold text-3xl text-neutral-100 3xl:text-5xl";
 }
 
 h3 {
@@ -98,7 +98,7 @@ h3 {
 }
 
 p {
-  --at-apply: "text-(neutral-300 md) lg:text-lg";
+  --at-apply: "text-(neutral-300 md) lg:text-lg 3xl:text-3xl";
 }
 
 b {

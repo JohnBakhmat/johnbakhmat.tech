@@ -1,15 +1,13 @@
-import animate from "tailwindcss-animate"
+import animate from "tailwindcss-animate";
 
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ["class"],
   safelist: ["dark"],
   prefix: "",
-  
-    content: [
-      './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
-    ],
-  
+
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+
   theme: {
     container: {
       center: true,
@@ -19,6 +17,9 @@ export default {
       },
     },
     extend: {
+      screens: {
+        "4k": "2000px",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -55,7 +56,7 @@ export default {
         },
       },
       borderRadius: {
-      	xl: "calc(var(--radius) + 4px)",
+        xl: "calc(var(--radius) + 4px)",
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
@@ -71,10 +72,10 @@ export default {
         },
         "collapsible-down": {
           from: { height: 0 },
-          to: { height: 'var(--radix-collapsible-content-height)' },
+          to: { height: "var(--radix-collapsible-content-height)" },
         },
         "collapsible-up": {
-          from: { height: 'var(--radix-collapsible-content-height)' },
+          from: { height: "var(--radix-collapsible-content-height)" },
           to: { height: 0 },
         },
       },
@@ -87,4 +88,4 @@ export default {
     },
   },
   plugins: [animate],
-}
+};
