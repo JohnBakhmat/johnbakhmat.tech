@@ -10,7 +10,7 @@ const repos = await actions.getRepos();
 
 <template>
   <section
-    class="flex-grow w-full grid grid-cols-1 gap-4 auto-cols-max sm:grid-cols-2 sm:gap-3 place-items-center"
+    class="w-full grid grid-cols-1 gap-4 auto-cols-max sm:grid-cols-2 sm:gap-3 place-items-center"
   >
     <Project v-if="repos.length > 0" v-for="repo in repos" :repo="repo" />
 
