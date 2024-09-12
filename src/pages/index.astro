@@ -4,7 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import ProjectSection from "../components/ProjectSection.vue";
-import Age  from "../components/Age.vue";
+import Age from "../components/Age.vue";
 ---
 
 <!doctype html>
@@ -18,17 +18,16 @@ import Age  from "../components/Age.vue";
       <h1 class="text-4xl pb-2">Hi, I'm <span class="text-john">John</span></h1>
       <p>
         I'm <Age client:visible />
-        y/o software engineer. I'm Bachelor of Computer Science. Blah blah.
+        y/o software engineer at.
         <b>I build stuff</b>. I like <b>web dev</b>, <b>game dev</b> and so much
         more. My main focus is full-stack stuff with <b>Typescript</b> and writing
-        <s> very important</s> projects with <b>Rust</b> to train my monkey brain.
+        <s> very important</s> projects to train my monkey brain.
       </p>
-      <p
-        class="blur-sm hover:blur-none duration-100 transition-all ease-in-out text-white"
-      >
-        (This is not endorsed by <b>The Rust Foundation</b> tho :) )
+      <p>
+        This year i found a new love of functional programming. Im writing <b
+          >Gleam</b
+        > and <b>OCaml</b> now. It's very fun
       </p>
-      <p>This year i found a new love of functional programming. Im writing <b>Gleam</b> and <b>OCaml</b> now. It's very fun</p>
       <p>
         If I feel fancy, I like doing research on random topics, engineering
         ones will end up as <a href="/blog">blog posts</a>. Sometimes you can
