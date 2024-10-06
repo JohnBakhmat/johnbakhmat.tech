@@ -1,34 +1,34 @@
 <script lang="ts">
-import moment from "moment";
+	import moment from "moment";
 
-export let start: string;
-export let end: string | undefined;
-export let logo: string;
-export let title: string;
-export let company: string;
+	export let start: string;
+	export let end: string | undefined;
+	export let logo: string;
+	export let title: string;
+	export let company: string;
 
-const formatDate = (date: string): string => {
-    return moment(date).format("DD MMM YYYY");
-};
+	const formatDate = (date: string): string => {
+		return moment(date).format("DD MMM YYYY");
+	};
 
-const duration = (since: string, till?: string): string => {
-    const startDate = moment(since);
-    const endDate = moment(till);
-    const monthsDiff = endDate.diff(startDate, "months");
-    const daysDiff = endDate.diff(
-        startDate.clone().add(monthsDiff, "months"),
-        "days",
-    );
-    const monthString =
-        monthsDiff > 0
-            ? `${monthsDiff} ${monthsDiff > 1 ? "months" : "month"}, `
-            : "";
+	const duration = (since: string, till?: string): string => {
+		const startDate = moment(since);
+		const endDate = moment(till);
+		const monthsDiff = endDate.diff(startDate, "months");
+		const daysDiff = endDate.diff(
+			startDate.clone().add(monthsDiff, "months"),
+			"days",
+		);
+		const monthString =
+			monthsDiff > 0
+				? `${monthsDiff} ${monthsDiff > 1 ? "months" : "month"}, `
+				: "";
 
-    const dayString =
-        daysDiff > 0 ? `${daysDiff} ${daysDiff > 1 ? "days" : "day"}` : "";
+		const dayString =
+			daysDiff > 0 ? `${daysDiff} ${daysDiff > 1 ? "days" : "day"}` : "";
 
-    return `${monthString}${dayString}`;
-};
+		return `${monthString}${dayString}`;
+	};
 </script>
 
 <div class="flex flex-row gap-4 items-center">
@@ -48,7 +48,7 @@ const duration = (since: string, till?: string): string => {
 		</h3>
 		<h5 class="opacity-50">
 			<span>{formatDate(start)}</span> -
-			<span>{end.length ? formatDate(end) : "present"}</span>
+			<span>{!!end ? formatDate(end) : "present"}</span>
 		</h5>
 	</div>
 </div>
