@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import ProjectSection from "../components/ProjectSection.vue";
 import Age from "../components/Age.vue";
+import Work from "../components/Work.svelte";
 ---
 
 <!doctype html>
@@ -14,26 +15,40 @@ import Age from "../components/Age.vue";
   </head>
   <body class="overflow-x-hidden">
     <Header title={SITE_TITLE} />
-    <main class="text-lg text-neutral-200">
-      <h1 class="text-4xl pb-2">Hi, I'm <span class="text-john">John</span></h1>
-      <p>
-        I'm <Age client:visible />
-        y/o software engineer at.
-        <b>I build stuff</b>. I like <b>web dev</b>, <b>game dev</b> and so much
-        more. My main focus is full-stack stuff with <b>Typescript</b> and writing
-        <s> very important</s> projects to train my monkey brain.
-      </p>
-      <p>
-        This year i found a new love of functional programming. Im writing <b
+    <main class="text-lg text-neutral-200 flex flex-col gap-4">
+      <section class="flex flex-col gap-2">
+        <h1 class="text-4xl">Hi, I'm <span class="text-john">John</span></h1>
+        <p>
+          I'm <Age client:visible />
+          y/o software engineer at Ap-3.
+          <b>I build stuff</b>. I like <b>web dev</b>, <b>game dev</b> and so much
+          more. My main focus is full-stack stuff with <b>Typescript</b> and writing
+          <s> very important</s> projects to train my monkey brain.
+        </p>
+        <p>
+          This year i found a new love of functional programming. Im writing <b
           >Gleam</b
-        > and <b>OCaml</b> now. It's very fun
-      </p>
-      <p>
-        If I feel fancy, I like doing research on random topics, engineering
-        ones will end up as <a href="/blog">blog posts</a>. Sometimes you can
-        also find me in <b>Warframe</b> grinding <b>prime relics</b>
-        or in <b>Endless Space 2</b> conquering the galaxy.
-      </p>
+          > and <b>OCaml</b> now. It's very fun
+        </p>
+        <p>
+          If I feel fancy, I like doing research on random topics, engineering
+          ones will end up as <a href="/blog">blog posts</a>. Sometimes you can
+          also find me in <b>Warframe</b> grinding <b>prime relics</b>
+          or in <b>Endless Space 2</b> conquering the galaxy.
+        </p>
+      </section>
+      <section class="flex flex-col gap-6">
+        <h2>Work experience</h2>
+        <div class="flex flex-col gap-5">
+          <Work 
+            start="2024-08-12" 
+            end="2024-08-24"
+            logo="https://hh.ru/employer-logo/6823815.png" 
+            title="Fullstack Developer"
+            company="Ap-3"
+          />
+        </div>
+      </section>
       <h2 class="pb-4">Things I've built or contributed to</h2>
       <ProjectSection client:visible />
     </main>

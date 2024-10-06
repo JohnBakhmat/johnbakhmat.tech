@@ -9,31 +9,31 @@ import vue from "@astrojs/vue";
 
 import compress from "astro-compress";
 
+import svelte from "@astrojs/svelte";
+
 // https://astro.build/config
 export default defineConfig({
-  site: "https://johnbakhmat.tech",
-  output: "server",
-  adapter: node({
-    mode: "standalone",
-  }),
-  integrations: [unocss(), mdx(), sitemap(), vue(), compress()],
-  markdown: {
-    extendDefaultPlugins: true,
-    rehypePlugins: [rehypeAutolinkHeadings],
-    shikiConfig: {
-      theme: loadTheme("./vesper-theme.json"),
+    site: "https://johnbakhmat.tech",
+    output: "server",
+    adapter: node({
+        mode: "standalone",
+    }),
+    integrations: [unocss(), mdx(), sitemap(), vue(), compress(), svelte()],
+    markdown: {
+        extendDefaultPlugins: true,
+        rehypePlugins: [rehypeAutolinkHeadings],
+        shikiConfig: {
+            theme: loadTheme("./vesper-theme.json"),
+        },
     },
-  },
-  prefetch: {
-    prefetchAll: true,
-    defaultStrategy: "viewport",
-  },
-  experimental: {
+    prefetch: {
+        prefetchAll: true,
+        defaultStrategy: "viewport",
+    },
     clientPrerender: true,
     actions: true,
-  },
-  redirects: {
-    "/tools": "/uses",
-    "/blog/[...slug]": "/articles/[...slug]",
-  },
+    redirects: {
+        "/tools": "/uses",
+        "/blog/[...slug]": "/articles/[...slug]",
+    },
 });

@@ -46,7 +46,7 @@ body {
   scroll-behavior: smooth;
   word-wrap: break-word;
   width: 100%;
-  background: radial-gradient(circle at 50%, #111 0%, #00222210 100%);
+  background: radial-gradient(circle at 50%, #111 0%,#00222210 100%);
   font-family:
     "Satoshi-Variable",
     "Helvetica Neue",
@@ -61,7 +61,6 @@ body {
     "Helvetica Neue",
     sans-serif;
 }
-
 main {
   --at-apply: "flex-grow flex flex-col";
 }
@@ -147,7 +146,7 @@ pre {
   --at-apply: "font-mono rounded-xl border border-neutral-800 p-4 my-8 text-sm scrollbar scrollbar-w-8px scrollbar-h-8px scrollbar-thumb-color-neutral-700 scrollbar-track-color-neutral-600 scrollbar-rounded  overflow-y-auto";
 }
 
-pre>code {
+pre > code {
   --at-apply: "font-mono";
   all: unset;
 }
@@ -161,35 +160,33 @@ ol {
   --at-apply: "ml-8";
 }
 
-ul>li {
+ul > li {
   --at-apply: "list-disc text-lg pb-2";
 }
 
-ul>li::marker {
+ul > li::marker {
   --at-apply: "text-neutral-500";
 }
 
-ol>li {
+ol > li {
   --at-apply: "list-decimal text-lg pb-2";
 }
 
 .text-john {
   color: transparent;
-  background: linear-gradient(322deg, #ff1b6b, #45caff);
-  background-clip: text;
-  -webkit-background-clip: text;
-}
-
-.pride .text-head-title {
-  color: transparent;
   /*background: linear-gradient(322deg, #ff1b6b, #45caff);*/
-  background: linear-gradient(150grad,
-      #FCB4BE 0% 16%,
-      #FFD8BC 16% 32%,
-      #F7F1C3 32% 48%,
-      #CFF4CB 48% 64%,
-      #CCEAEF 64% 80%,
-      #DDD2FB 80% 100%);
+  background: linear-gradient(
+    322deg,
+    #E40303 0% 16.7%,  /* Red */
+    #FF8C00 16.7% 33.3%, /* Orange */
+    #FFED00 33.3% 50%,      /* Yellow */
+    #008026 50% 66.7%,   /* Green */
+    #004CFF 66.7% 83.3%, /* Blue */
+    #732982 83.3% 100%,      /* Violet */
+    #5BCEFA,
+    #F5A9B8,
+    #FFFFFF
+    );
   background-clip: text;
   -webkit-background-clip: text;
 }
@@ -264,7 +261,6 @@ ol>li {
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
   }

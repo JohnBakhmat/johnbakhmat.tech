@@ -1,14 +1,17 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import Toaster from "@/components/ui/toast/Toaster.vue";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
+import moment from "moment";
+
+const isPride = moment().month() === 5;
 ---
 
 <div class="grain"></div>
-<header class="m-[0_0_2em]">
+<header class=`m-[0_0_2em] ${isPride ? "pride" : ""}`>
   <div class="flex flex-row justify-between items-center">
     <div class="flex flex-col">
-    <h2 class="pb-1 flex items-center gap-3 m-[0.5em_0]">
+    <h2 class="pb-1 flex items-center gap-3 m-[0.5em_0] text-head-title w-fit">
       John Bakhmat
     </h2>
     <nav class="flex gap-3 flex-wrap">
