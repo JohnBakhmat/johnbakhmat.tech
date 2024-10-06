@@ -5,19 +5,13 @@ import { actions } from "astro:actions";
 const mailto =
   "mailto:johnbakhmat@gmail.com/?subject=Yo, your site project api broke";
 
-const repos = await actions.getRepos();
+const repos = await actions.getRepos().then((x) => x.data);
 </script>
 
 <template>
-  <section
-    class="w-full grid grid-cols-1 gap-4 auto-cols-max sm:grid-cols-2 sm:gap-3 place-items-center"
-  >
+  <section class="w-full grid grid-cols-1 gap-4 auto-cols-max sm:grid-cols-2 sm:gap-3 place-items-center">
     <Project v-if="repos.length > 0" v-for="repo in repos" :repo="repo" />
-
-    <div
-      v-else
-      class="col-span-full row-span-full flex flex-col place-content-center text-center"
-    >
+    <div v-else class="col-span-full row-span-full flex flex-col place-content-center text-center">
       <p>
         OOps can't get project info! If you see this,
         <a :href="mailto"> contact me </a>
