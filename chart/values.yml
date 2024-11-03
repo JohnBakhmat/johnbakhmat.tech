@@ -7,7 +7,7 @@ replicas: 3
 
 service:
   app_port: 80
-  host: johnbakhmat.tech
+  host: johnbakhmat.dev
   ssl:
     enabled: true
     port: 443
