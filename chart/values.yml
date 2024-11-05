@@ -1,5 +1,5 @@
 image:
-  repository: ghcr.io/johnbakhmat/johnbakhmat-tech
+  repository: ghcr.io/johnbakhmat/johnbakhmat-dev
   pullPolicy: Always
   tag: "main"
 
