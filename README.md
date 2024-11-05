@@ -1,4 +1,4 @@
-# johnbakhmat.tech
+# johnbakhmat.dev
 
 A boring personal website inspired by the [Vesper Theme](https://github.com/raunofreiberg/vesper) made using [Astro](https://astro.build) and a sprinkle of [React](https://reactjs.org).
 
@@ -14,8 +14,8 @@ A boring personal website inspired by the [Vesper Theme](https://github.com/raun
 This application requires Node.js to run.
 
 ```sh
-git clone https://github.com/johnbakhmat/johnbakhmat.tech.git
-cd johnbakhmat.tech
+git clone https://github.com/johnbakhmat/johnbakhmat.dev.git
+cd johnbakhmat.dev
 npm i -g pnpm
 pnpm i
 pnpm dev

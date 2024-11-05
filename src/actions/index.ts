@@ -15,7 +15,7 @@ export const server = {
 
             try {
                 const url =
-                    "https://pinned.johnbakhmat.tech/projects/johnbakhmat";
+                    "https://pinned.johnbakhmat.dev/projects/johnbakhmat";
                 const response = await fetch(url);
                 const json = await response.json();
                 const repos = await repo.array().parseAsync(json);
